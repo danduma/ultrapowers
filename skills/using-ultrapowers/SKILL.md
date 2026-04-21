@@ -38,6 +38,10 @@ If yes, use it before continuing.
 - Start app UI from a ShadCN Block before inventing a layout from scratch.
 - Treat desktop and mobile responsiveness as first-class from the beginning.
 - Do not default to file-based routing.
+- Prefer strong instrumentation and auditability for backend behavior.
+- When a project has backend or agent workflows, prefer a fully instrumented control plane: persist meaningful events, tool calls, actions, results, errors, and state transitions, and expose them through a CLI or other scriptable interface so the full system can be inspected and tested without the UI.
+- Do not default to silent, masked, or over-abstracted errors.
+- When a project has a frontend, prefer surfacing full backend error details and stack traces to the frontend so failures stay visible, debuggable, and testable end-to-end.
 
 See `docs/ultrapowers-defaults.md` for the canonical fork defaults.
 

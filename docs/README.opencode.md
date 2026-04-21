@@ -36,7 +36,9 @@ use skill tool to load ultrapowers/brainstorming
 - `shadcn/ui` as the default UI system,
 - start app UI from a ShadCN Block,
 - responsive desktop and mobile design from the start,
-- avoid file-based routing by default.
+- avoid file-based routing by default,
+- strong backend instrumentation with a scriptable control plane when the project has backend workflows,
+- no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists.
 
 ## Personal Skills
 

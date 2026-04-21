@@ -34,3 +34,7 @@ This file is the canonical summary of the fork's opinionated defaults.
 - Do not default to file-based routing.
 - Prefer explicit routing choices unless the framework or existing codebase makes another pattern necessary.
 - Preserve existing project conventions when the human asks to work within an established system.
+- Prefer strong instrumentation for backend and product behavior.
+- When the project has backend workflows, prefer a fully instrumented control plane: every meaningful action, state transition, error, and result should be captured in durable logs or events, and exposed through a CLI or other scriptable interface so end-to-end behavior can be tested without a UI.
+- Do not default to silent, hidden, or heavily abstracted failures.
+- When the project has a frontend and backend boundary, prefer surfacing full error details and stack traces to the frontend so the real failure remains visible during development, debugging, and automated testing.

@@ -92,6 +92,18 @@ This includes:
 - user-visible status,
 - key logs or events,
 - enough observability to debug failures and stuck states.
+- durable event history for backend actions and state transitions.
+- a scriptable control plane, preferably CLI-accessible, for inspection, replay, admin operations, and end-to-end testing without the UI.
+- explicit propagation of real errors to user-facing and operator-facing surfaces instead of generic fallback messages.
+
+For systems with conversations, jobs, tools, or agents, prefer event models that preserve:
+
+- inputs and outputs,
+- tool calls and tool results,
+- errors and retries,
+- stack traces and failure context,
+- state transitions,
+- timestamps and identifiers needed to reconstruct what happened later.
 
 ### Onboarding And Discoverability
 
@@ -107,6 +119,7 @@ Ask what a first-time or returning user sees:
 Ask where user trust could break:
 
 - silent failure,
+- generic error abstraction that hides the real cause,
 - ambiguous state,
 - lost work,
 - destructive actions,

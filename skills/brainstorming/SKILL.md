@@ -29,6 +29,7 @@ Do not implement, scaffold, or change behavior until the design has been present
 - goal and constraints,
 - architecture and boundaries,
 - data flow and error handling,
+- error transparency expectations,
 - testing strategy,
 - user stories when they help define behavior,
 - acceptance criteria when they clarify completion,
@@ -36,6 +37,8 @@ Do not implement, scaffold, or change behavior until the design has been present
 - state model,
 - operational readiness,
 - instrumentation and observability expectations,
+- control-plane and scriptability expectations,
+- error reporting expectations across backend, frontend, and logs,
 - onboarding and discoverability expectations,
 - risk and trust surfaces,
 - north-star product vision,
@@ -55,6 +58,8 @@ During this pass:
 - define the state model,
 - define operational readiness expectations,
 - define instrumentation and observability expectations,
+- define control-plane expectations for inspection, replay, administration, and end-to-end testing,
+- define error transparency expectations so failures are not silently swallowed or abstracted away,
 - define onboarding and discoverability expectations,
 - define the main risk and trust surfaces,
 - define the north-star product,
@@ -101,6 +106,8 @@ When the work involves an app, UI, or product surface, assume these defaults unl
 - design for desktop and mobile from the beginning,
 - make responsiveness part of the initial design,
 - avoid file-based routing by default,
+- prefer strong backend instrumentation and a scriptable control plane for backend workflows,
+- prefer surfacing full error details and stack traces to the frontend instead of replacing them with vague generic failures,
 - aim for a usable v1, not just the smallest literal UI that exposes requested controls.
 - think ambitiously about the full product, then sequence it into coherent milestones.
 

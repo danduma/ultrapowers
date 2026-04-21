@@ -21,6 +21,10 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Start app UIs from a ShadCN Block when possible.
 - Design for desktop and mobile from the beginning.
 - Avoid file-based routing by default.
+- Prefer strong backend instrumentation by default.
+- Prefer a fully instrumented control plane for backend and product work: persist meaningful events, actions, errors, and state transitions, and expose them through a CLI or other scriptable interface so the system can be tested end-to-end without relying on the UI.
+- Do not allow silent or heavily abstracted errors by default.
+- Prefer end-to-end error transparency: the frontend should receive the full error details and stack trace so failures stay inspectable, testable, and impossible to hand-wave away.
 
 ## Change Quality
 

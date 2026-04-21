@@ -61,7 +61,9 @@ The important behavioral defaults come from `using-ultrapowers`, plus the rewrit
 - `shadcn/ui` for UI work,
 - ShadCN Blocks as the first stop for app UI,
 - desktop and mobile responsiveness from the start,
-- no file-based routing by default.
+- no file-based routing by default,
+- strong backend instrumentation with a scriptable control plane when the project has backend workflows,
+- no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists.
 
 ## Updating
 

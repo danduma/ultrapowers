@@ -54,8 +54,10 @@ Also verify:
 - the state model is represented correctly,
 - operational readiness expectations are met for the approved scope,
 - instrumentation and observability exist where the approved scope depends on them,
+- real errors are surfaced rather than silently swallowed or replaced with vague placeholders,
 - onboarding and discoverability work for first-run or empty-state use,
 - risk and trust surfaces are handled well enough to avoid silent failure, ambiguous state, or obvious loss of confidence,
+- when the scope includes a frontend/backend boundary, frontend-visible failures preserve the real error details and stack traces expected by the approved design,
 - baseline expected v1 surfaces and inferred behaviors from the approved story set, spec, or plan are actually present.
 
 Do not confuse "the requested control exists" with "the product is usable."

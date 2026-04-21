@@ -1,16 +1,28 @@
 # Ultrapowers
 
-Ultrapowers is an opinionated software development methodology for coding agents. It starts from `obra/superpowers`, then rewrites the defaults to better fit practical product work: lighter local workflows, clearer user intent, stronger frontend defaults, and less ceremony unless the user actually wants it.
+Ultrapowers is an opinionated software development methodology for coding agents. It does some of the job of a PM without the faff, helping the agent think through the product requirements based on user stories.
+
+Why should you use Ultrapowers? Because you don't want to
+- reinvent the UI wheel - just use shadcn/ui, next.js
+- waste the first 2 days reimplementing basic usage patterns like an AI chat app
+- waste another day tweaking the interface so it looks good on mobile
+- waste another day iterating over common API errors
+- waste 100 days in worktree/branch hell
+
+Ultrapowers is an opinionated fork of `obra/superpowers` that tries to be more practical and usable for product engineering. It has strong defaults to better fit practical product work and less ceremony. 
+
+This works best if you are solo developer who just wants to get a decent product out as quickly as possible.
 
 ## Core Defaults
 
-- Work in the current repository by default.
-- Never create a branch or worktree unless the user explicitly asks or isolation is genuinely necessary.
+- Work in the current repository by default, never create a branch or worktree unless the user explicitly asks or isolation is unavoidable.
 - Use user stories in specs and plans when they clarify behavior.
 - Default UI work to `shadcn/ui`.
-- Start app UI from a ShadCN Block before inventing a layout from scratch.
+- Start app UI from a shadcn/ui block or pattern, no point in inventing a layout from scratch.
 - Treat desktop and mobile responsiveness as first-class from the beginning.
 - Do not default to file-based routing.
+- Prefer strong backend instrumentation and a fully instrumented control plane.
+- Prefer explicit, non-silent error handling with full error details and stack traces surfaced to the frontend.
 - Expand familiar product archetypes toward a usable v1 instead of stopping at literal requested controls.
 - Infer expected product surfaces from what users need to do, revisit, recover from, and understand.
 - Think ambitiously about the full product, then deliver it in coherent milestones without forgetting the bigger vision.
@@ -37,6 +49,8 @@ Ultrapowers is an opinionated software development methodology for coding agents
 - **North star, then milestone** - define the ambitious product first, then choose the current slice without erasing the rest.
 - **Frontend with opinions** - prefer `shadcn/ui`, ShadCN Blocks, and responsive layouts from the start.
 - **Explicit architecture** - do not drift into file-based routing unless the project or user specifically wants it.
+- **Instrumented by default** - capture meaningful backend events, actions, errors, and outcomes in durable logs, and expose a CLI or other scriptable control plane so workflows can be exercised and verified without the UI.
+- **No silent failures** - do not hide, overly abstract, or hand-wave errors; surface real error details and stack traces to the frontend so failures are inspectable and testable.
 - **Evidence over claims** - run the checks before saying something works.
 
 ## What's Inside
@@ -74,6 +88,27 @@ Repository:
 https://github.com/danduma/ultrapowers
 ```
 
+### Claude Code
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/danduma/ultrapowers.git ~/.claude/ultrapowers
+```
+
+2. Expose the skills to Claude Code:
+
+```bash
+mkdir -p ~/.claude/skills
+for d in ~/.claude/ultrapowers/skills/*; do
+  ln -s "$d" ~/.claude/skills/$(basename "$d")
+done
+```
+
+3. If you previously had the upstream `superpowers` plugin enabled, disable it in `~/.claude/settings.json` to avoid duplicate skill resolution.
+
+4. Restart Claude Code.
+
 ### Codex
 
 1. Clone the repository:
@@ -97,6 +132,20 @@ Optional for subagent-heavy skills:
 [features]
 multi_agent = true
 ```
+
+### Gemini
+
+1. Clone the repository into Gemini's extensions directory:
+
+```bash
+git clone https://github.com/danduma/ultrapowers.git ~/.gemini/extensions/ultrapowers
+```
+
+2. If your Gemini CLI uses `~/.gemini/extensions/extension-enablement.json`, add an `ultrapowers` entry there so the extension is enabled for your workspace paths.
+
+3. Restart Gemini CLI.
+
+The repo already includes `gemini-extension.json` and `GEMINI.md`, so Gemini can load Ultrapowers directly from the cloned extension directory.
 
 ### OpenCode
 
