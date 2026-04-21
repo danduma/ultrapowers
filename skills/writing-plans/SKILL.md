@@ -1,152 +1,117 @@
 ---
 name: writing-plans
-description: Use when you have a spec or requirements for a multi-step task, before touching code
+description: Use when you have an approved spec or clear requirements for a multi-step task, before implementation
 ---
 
 # Writing Plans
 
-## Overview
-
-Write comprehensive implementation plans assuming the engineer has zero context for our codebase and questionable taste. Document everything they need to know: which files to touch for each task, code, testing, docs they might need to check, how to test it. Give them the whole plan as bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.
-
-Assume they are a skilled developer, but know almost nothing about our toolset or problem domain. Assume they don't know good test design very well.
+Write a concrete implementation plan that another capable engineer could execute without guessing.
 
 **Announce at start:** "I'm using the writing-plans skill to create the implementation plan."
 
-**Context:** This should be run in a dedicated worktree (created by brainstorming skill).
+## Defaults
 
-**Save plans to:** `docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md`
-- (User preferences for plan location override this default)
+- Work in the current repository unless the user asked for isolation.
+- Do not assume a dedicated worktree or branch.
+- Keep the plan DRY, YAGNI, and test-first.
 
-## Scope Check
+## Save Plans To
 
-If the spec covers multiple independent subsystems, it should have been broken into sub-project specs during brainstorming. If it wasn't, suggest breaking this into separate plans — one per subsystem. Each plan should produce working, testable software on its own.
+`docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md`
 
-## File Structure
+## Plan Header
 
-Before defining tasks, map out which files will be created or modified and what each one is responsible for. This is where decomposition decisions get locked in.
-
-- Design units with clear boundaries and well-defined interfaces. Each file should have one clear responsibility.
-- You reason best about code you can hold in context at once, and your edits are more reliable when files are focused. Prefer smaller, focused files over large ones that do too much.
-- Files that change together should live together. Split by responsibility, not by technical layer.
-- In existing codebases, follow established patterns. If the codebase uses large files, don't unilaterally restructure - but if a file you're modifying has grown unwieldy, including a split in the plan is reasonable.
-
-This structure informs the task decomposition. Each task should produce self-contained changes that make sense independently.
-
-## Bite-Sized Task Granularity
-
-**Each step is one action (2-5 minutes):**
-- "Write the failing test" - step
-- "Run it to make sure it fails" - step
-- "Implement the minimal code to make the test pass" - step
-- "Run the tests and make sure they pass" - step
-- "Commit" - step
-
-## Plan Document Header
-
-**Every plan MUST start with this header:**
+Every plan should begin with:
 
 ```markdown
 # [Feature Name] Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use ultrapowers:subagent-driven-development (recommended) or ultrapowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** [One sentence describing what this builds]
+**Goal:** [one-sentence outcome]
 
-**Architecture:** [2-3 sentences about approach]
+**Architecture:** [2-3 sentences on the approach]
 
-**Tech Stack:** [Key technologies/libraries]
+**Tech Stack:** [key technologies and libraries]
+
+**North Star Product:** [what the fully realized product wants to become]
+
+**Current Milestone:** [the coherent slice being delivered now]
+
+**Later Milestones / Deferred But Intentional:** [what remains part of the product vision]
 
 ---
 ```
 
-## Task Structure
+## Build The File Map First
 
-````markdown
-### Task N: [Component Name]
+Before writing tasks, list:
 
-**Files:**
-- Create: `exact/path/to/file.py`
-- Modify: `exact/path/to/existing.py:123-145`
-- Test: `tests/exact/path/to/test.py`
+- files to create,
+- files to modify,
+- tests to update or add,
+- the responsibility of each file.
 
-- [ ] **Step 1: Write the failing test**
+## Task Quality
 
-```python
-def test_specific_behavior():
-    result = function(input)
-    assert result == expected
-```
+Each task should:
 
-- [ ] **Step 2: Run test to verify it fails**
+- be small enough to execute confidently,
+- name exact file paths,
+- include concrete verification steps,
+- make TDD the default flow,
+- avoid vague placeholders.
 
-Run: `pytest tests/path/test.py::test_name -v`
-Expected: FAIL with "function not defined"
+## Include User Stories When Helpful
 
-- [ ] **Step 3: Write minimal implementation**
+If the spec uses user stories, preserve them in the plan where they clarify what behavior a task is supposed to deliver. Use them to ground scope, not as ceremony.
 
-```python
-def function(input):
-    return expected
-```
+## Preserve The Product Completeness Pass
 
-- [ ] **Step 4: Run test to verify it passes**
+If brainstorming identified baseline expected v1 surfaces or states for a familiar product archetype, preserve them in the plan. Do not collapse the work back down to only the literal controls named in the initial prompt.
 
-Run: `pytest tests/path/test.py::test_name -v`
-Expected: PASS
+If brainstorming derived baseline expected v1 behaviors from approved user stories or journeys, preserve those too. Make sure the plan includes implementation work for the primary journey, return/revisit path, failure/recovery path, and status visibility when they are relevant to the product.
 
-- [ ] **Step 5: Commit**
+Preserve the approved north-star product vision as well as the current milestone. The plan should not forget later intended capabilities just because they are not being built in this slice.
 
-```bash
-git add tests/path/test.py src/path/file.py
-git commit -m "feat: add specific feature"
-```
-````
+When relevant, make sure the plan includes treatment for:
 
-## No Placeholders
+- supporting jobs that matter in this milestone,
+- state model requirements,
+- operational readiness requirements,
+- instrumentation and observability requirements,
+- onboarding and discoverability requirements,
+- trust and risk requirements.
 
-Every step must contain the actual content an engineer needs. These are **plan failures** — never write them:
-- "TBD", "TODO", "implement later", "fill in details"
-- "Add appropriate error handling" / "add validation" / "handle edge cases"
-- "Write tests for the above" (without actual test code)
-- "Similar to Task N" (repeat the code — the engineer may be reading tasks out of order)
-- Steps that describe what to do without showing how (code blocks required for code steps)
-- References to types, functions, or methods not defined in any task
+At the same time, do not silently hard-code debatable additions. If a proposed addition is non-obvious, materially expands scope, adds meaningful cost, or reflects a strong product opinion rather than an obvious story-derived expectation, check with the user before baking it into the plan.
 
-## Remember
-- Exact file paths always
-- Complete code in every step — if a step changes code, show the code
-- Exact commands with expected output
-- DRY, YAGNI, TDD, frequent commits
+## Frontend Defaults In Plans
+
+Unless the user says otherwise, frontend plans should preserve these assumptions:
+
+- `shadcn/ui` is the default design system,
+- app UI starts by selecting a ShadCN Block or starting pattern,
+- desktop and mobile responsiveness are part of the first implementation pass,
+- do not default to file-based routing.
 
 ## Self-Review
 
-After writing the complete plan, look at the spec with fresh eyes and check the plan against it. This is a checklist you run yourself — not a subagent dispatch.
+Before execution, check:
 
-**1. Spec coverage:** Skim each section/requirement in the spec. Can you point to a task that implements it? List any gaps.
-
-**2. Placeholder scan:** Search your plan for red flags — any of the patterns from the "No Placeholders" section above. Fix them.
-
-**3. Type consistency:** Do the types, method signatures, and property names you used in later tasks match what you defined in earlier tasks? A function called `clearLayers()` in Task 3 but `clearFullLayers()` in Task 7 is a bug.
-
-If you find issues, fix them inline. No need to re-review — just fix and move on. If you find a spec requirement with no task, add the task.
+1. every spec requirement maps to a task,
+2. there are no placeholders or undefined references,
+3. names and interfaces stay consistent across tasks,
+4. the plan does not assume branches or worktrees unless the user asked for them,
+5. the plan includes obvious baseline expected v1 surfaces and states,
+6. the plan does not lock in non-obvious additions without user confirmation,
+7. the current milestone is clearly separated from the north-star product,
+8. deferred-but-intentional work has not been silently forgotten.
 
 ## Execution Handoff
 
-After saving the plan, offer execution choice:
+After saving the plan, either:
 
-**"Plan complete and saved to `docs/superpowers/plans/<filename>.md`. Two execution options:**
+- execute it inline with `executing-plans`, or
+- execute it with `subagent-driven-development` when that workflow is a good fit.
 
-**1. Subagent-Driven (recommended)** - I dispatch a fresh subagent per task, review between tasks, fast iteration
-
-**2. Inline Execution** - Execute tasks in this session using executing-plans, batch execution with checkpoints
-
-**Which approach?"**
-
-**If Subagent-Driven chosen:**
-- **REQUIRED SUB-SKILL:** Use superpowers:subagent-driven-development
-- Fresh subagent per task + two-stage review
-
-**If Inline Execution chosen:**
-- **REQUIRED SUB-SKILL:** Use superpowers:executing-plans
-- Batch execution with checkpoints for review
+If the user already asked you to continue and implement, you may proceed with the appropriate execution path without pausing for another choice prompt.

@@ -1,0 +1,66 @@
+---
+name: using-ultrapowers
+description: Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before acting
+---
+
+<SUBAGENT-STOP>
+If you were dispatched as a subagent to execute a specific task, skip this skill.
+</SUBAGENT-STOP>
+
+# Using Ultrapowers
+
+Use relevant skills before acting. Even a small chance that a skill applies is enough to check it.
+
+## Instruction Priority
+
+1. User instructions and local repo instructions
+2. Ultrapowers skills
+3. Default model behavior
+
+If the user says not to create branches, worktrees, or file-based routing, follow the user. If the user wants direct work in the current repository, that is the default.
+
+## Core Rule
+
+Before responding, ask:
+
+1. Is there a process skill that governs how to approach this?
+2. Is there an implementation skill that governs how to execute it?
+
+If yes, use it before continuing.
+
+## Default Posture
+
+- Work in the current repository by default.
+- Do not create branches unless the user explicitly asks.
+- Do not create worktrees unless the user explicitly asks or isolation is clearly necessary.
+- Use user stories in specs and plans when they clarify behavior or value.
+- Default UI work to `shadcn/ui` unless the user says otherwise.
+- Start app UI from a ShadCN Block before inventing a layout from scratch.
+- Treat desktop and mobile responsiveness as first-class from the beginning.
+- Do not default to file-based routing.
+
+See `docs/ultrapowers-defaults.md` for the canonical fork defaults.
+
+## Skill Priority
+
+1. Process skills first
+2. Implementation skills second
+
+Examples:
+
+- "Build a feature" -> `brainstorming`, then `writing-plans`, then execution
+- "Fix this bug" -> `systematic-debugging`, then the relevant implementation skill
+- "Review this change" -> `requesting-code-review`
+
+## Examples Of User Override
+
+- If a skill suggests worktree isolation but the user says "work here in this repo", work here in this repo.
+- If a stack supports file-based routing but the user says not to use it, choose an explicit routing approach instead.
+- If a frontend skill suggests `shadcn/ui` but the user wants another design system, follow the user.
+
+## Red Flags
+
+- "I can just inspect a few files first" -> check for skills first
+- "This is simple enough to skip process" -> simple tasks still benefit from the right workflow
+- "The skill says branch/worktree, so I must do it" -> only if the user wants it or the task truly requires it
+- "I already know the skill" -> read the current version before relying on it

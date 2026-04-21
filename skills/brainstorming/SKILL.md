@@ -1,164 +1,133 @@
 ---
 name: brainstorming
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+description: Use before any creative work - creating features, building components, adding functionality, or modifying behavior
 ---
 
 # Brainstorming Ideas Into Designs
 
-Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
+Turn rough ideas into an approved design before implementation begins.
 
-Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design and get user approval.
+## Hard Gate
 
-<HARD-GATE>
-Do NOT invoke any implementation skill, write any code, scaffold any project, or take any implementation action until you have presented a design and the user has approved it. This applies to EVERY project regardless of perceived simplicity.
-</HARD-GATE>
-
-## Anti-Pattern: "This Is Too Simple To Need A Design"
-
-Every project goes through this process. A todo list, a single-function utility, a config change — all of them. "Simple" projects are where unexamined assumptions cause the most wasted work. The design can be short (a few sentences for truly simple projects), but you MUST present it and get approval.
+Do not implement, scaffold, or change behavior until the design has been presented and approved.
 
 ## Checklist
 
-You MUST create a task for each of these items and complete them in order:
+1. Explore project context.
+2. Ask clarifying questions one at a time.
+3. Run a PM Pass for app, UI, and product-surface requests.
+4. Run a Product Completeness Pass for app, UI, and product-surface requests.
+5. Propose 2-3 approaches with trade-offs and a recommendation.
+6. Present the design in manageable sections and get approval.
+7. Write the spec to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md`.
+8. Self-review for ambiguity, contradictions, placeholders, and scope.
+9. Ask the user to review the written spec.
+10. Move to `writing-plans`.
 
-1. **Explore project context** — check files, docs, recent commits
-2. **Offer visual companion** (if topic will involve visual questions) — this is its own message, not combined with a clarifying question. See the Visual Companion section below.
-3. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria
-4. **Propose 2-3 approaches** — with trade-offs and your recommendation
-5. **Present design** — in sections scaled to their complexity, get user approval after each section
-6. **Write design doc** — save to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md` and commit
-7. **Spec self-review** — quick inline check for placeholders, contradictions, ambiguity, scope (see below)
-8. **User reviews written spec** — ask user to review the spec file before proceeding
-9. **Transition to implementation** — invoke writing-plans skill to create implementation plan
+## What The Design Should Cover
 
-## Process Flow
+- goal and constraints,
+- architecture and boundaries,
+- data flow and error handling,
+- testing strategy,
+- user stories when they help define behavior,
+- acceptance criteria when they clarify completion,
+- supporting jobs,
+- state model,
+- operational readiness,
+- instrumentation and observability expectations,
+- onboarding and discoverability expectations,
+- risk and trust surfaces,
+- north-star product vision,
+- current milestone and later milestones,
+- baseline expected v1 surfaces and states for familiar product types.
 
-```dot
-digraph brainstorming {
-    "Explore project context" [shape=box];
-    "Visual questions ahead?" [shape=diamond];
-    "Offer Visual Companion\n(own message, no other content)" [shape=box];
-    "Ask clarifying questions" [shape=box];
-    "Propose 2-3 approaches" [shape=box];
-    "Present design sections" [shape=box];
-    "User approves design?" [shape=diamond];
-    "Write design doc" [shape=box];
-    "Spec self-review\n(fix inline)" [shape=box];
-    "User reviews spec?" [shape=diamond];
-    "Invoke writing-plans skill" [shape=doublecircle];
+## PM Pass
 
-    "Explore project context" -> "Visual questions ahead?";
-    "Visual questions ahead?" -> "Offer Visual Companion\n(own message, no other content)" [label="yes"];
-    "Visual questions ahead?" -> "Ask clarifying questions" [label="no"];
-    "Offer Visual Companion\n(own message, no other content)" -> "Ask clarifying questions";
-    "Ask clarifying questions" -> "Propose 2-3 approaches";
-    "Propose 2-3 approaches" -> "Present design sections";
-    "Present design sections" -> "User approves design?";
-    "User approves design?" -> "Present design sections" [label="no, revise"];
-    "User approves design?" -> "Write design doc" [label="yes"];
-    "Write design doc" -> "Spec self-review\n(fix inline)";
-    "Spec self-review\n(fix inline)" -> "User reviews spec?";
-    "User reviews spec?" -> "Write design doc" [label="changes requested"];
-    "User reviews spec?" -> "Invoke writing-plans skill" [label="approved"];
-}
-```
+For app, UI, and product-surface work, run a PM pass before the completeness pass.
 
-**The terminal state is invoking writing-plans.** Do NOT invoke frontend-design, mcp-builder, or any other implementation skill. The ONLY skill you invoke after brainstorming is writing-plans.
+During this pass:
 
-## The Process
+- default the first user to the human builder unless the prompt says otherwise,
+- assume the core job is usually already implied by the prompt,
+- aggressively discover the supporting jobs around that core job,
+- identify user segmentation and role clarity when the product genuinely has multiple roles,
+- define the state model,
+- define operational readiness expectations,
+- define instrumentation and observability expectations,
+- define onboarding and discoverability expectations,
+- define the main risk and trust surfaces,
+- define the north-star product,
+- define the current milestone as one slice of that product,
+- define later milestones or deferred-but-intentional work so the product vision is not forgotten.
 
-**Understanding the idea:**
+Use `pm-pass.md` as the reference for this step.
 
-- Check out the current project state first (files, docs, recent commits)
-- Before asking detailed questions, assess scope: if the request describes multiple independent subsystems (e.g., "build a platform with chat, file storage, billing, and analytics"), flag this immediately. Don't spend questions refining details of a project that needs to be decomposed first.
-- If the project is too large for a single spec, help the user decompose into sub-projects: what are the independent pieces, how do they relate, what order should they be built? Then brainstorm the first sub-project through the normal design flow. Each sub-project gets its own spec → plan → implementation cycle.
-- For appropriately-scoped projects, ask questions one at a time to refine the idea
-- Prefer multiple choice questions when possible, but open-ended is fine too
-- Only one question per message - if a topic needs more exploration, break it into multiple questions
-- Focus on understanding: purpose, constraints, success criteria
+Milestone slicing is for sequencing delivery, not for shrinking the product imagination. Be expansive about the full product. Be deliberate about what belongs in the current milestone.
 
-**Exploring approaches:**
+## Product Completeness Pass
 
-- Propose 2-3 different approaches with trade-offs
-- Present options conversationally with your recommendation and reasoning
-- Lead with your recommended option and explain why
+For app, UI, and product-surface work, do not stop at the literal requested controls. Expand the design into a usable v1 by asking what a user would reasonably expect this category of product to include.
 
-**Presenting the design:**
+During this pass:
 
-- Once you believe you understand what you're building, present the design
-- Scale each section to its complexity: a few sentences if straightforward, up to 200-300 words if nuanced
-- Ask after each section whether it looks right so far
-- Cover: architecture, components, data flow, error handling, testing
-- Be ready to go back and clarify if something doesn't make sense
+- derive the primary user stories,
+- derive return/revisit stories,
+- derive failure/recovery stories,
+- derive status-awareness stories,
+- derive mutation stories when the product involves editing, retrying, resubmitting, branching, or other state-changing actions,
+- separate:
+  - explicitly requested capabilities,
+  - baseline expected v1 surfaces and states inferred from the stories,
+- map the primary user journey,
+- infer the interface surfaces and system behaviors required to satisfy those stories,
+- cover expected empty, loading, running, waiting, error, completed, and recovery states,
+- cover navigation, hierarchy, and status signaling,
+- cover desktop and mobile behavior,
+- use the PM pass outputs as inputs,
+- use `story-derived-completeness.md` as the primary reference,
+- use `v1-product-completeness.md` as a sanity check when the product archetype is familiar.
 
-**Design for isolation and clarity:**
+For non-obvious, costly, opinionated, or materially scope-expanding additions, check with the user before baking them into the spec as committed scope.
 
-- Break the system into smaller units that each have one clear purpose, communicate through well-defined interfaces, and can be understood and tested independently
-- For each unit, you should be able to answer: what does it do, how do you use it, and what does it depend on?
-- Can someone understand what a unit does without reading its internals? Can you change the internals without breaking consumers? If not, the boundaries need work.
-- Smaller, well-bounded units are also easier for you to work with - you reason better about code you can hold in context at once, and your edits are more reliable when files are focused. When a file grows large, that's often a signal that it's doing too much.
+You may brainstorm with yourself to expand the completeness pass. Only involve additional agents when the user explicitly wants that or has already allowed delegated brainstorming.
 
-**Working in existing codebases:**
+## Ultrapowers Defaults During Brainstorming
 
-- Explore the current structure before proposing changes. Follow existing patterns.
-- Where existing code has problems that affect the work (e.g., a file that's grown too large, unclear boundaries, tangled responsibilities), include targeted improvements as part of the design - the way a good developer improves code they're working in.
-- Don't propose unrelated refactoring. Stay focused on what serves the current goal.
+When the work involves an app, UI, or product surface, assume these defaults unless the user overrides them:
 
-## After the Design
+- use `shadcn/ui`,
+- choose a ShadCN Block first for app UI,
+- design for desktop and mobile from the beginning,
+- make responsiveness part of the initial design,
+- avoid file-based routing by default,
+- aim for a usable v1, not just the smallest literal UI that exposes requested controls.
+- think ambitiously about the full product, then sequence it into coherent milestones.
 
-**Documentation:**
+If the current codebase already has strong conventions, preserve them unless the user asks to change direction.
 
-- Write the validated design (spec) to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md`
-  - (User preferences for spec location override this default)
-- Use elements-of-style:writing-clearly-and-concisely skill if available
-- Commit the design document to git
+## Questions
 
-**Spec Self-Review:**
-After writing the spec document, look at it with fresh eyes:
+- Ask one question at a time.
+- Prefer multiple-choice framing when possible.
+- Do not invent extra process when the user has already answered the important decisions.
 
-1. **Placeholder scan:** Any "TBD", "TODO", incomplete sections, or vague requirements? Fix them.
-2. **Internal consistency:** Do any sections contradict each other? Does the architecture match the feature descriptions?
-3. **Scope check:** Is this focused enough for a single implementation plan, or does it need decomposition?
-4. **Ambiguity check:** Could any requirement be interpreted two different ways? If so, pick one and make it explicit.
+## Design Quality
 
-Fix any issues inline. No need to re-review — just fix and move on.
+- Break systems into focused units with clear responsibilities.
+- Prefer explicit interfaces over vague coupling.
+- Stay close to the current codebase patterns when working in an existing project.
+- Include only refactors that directly support the requested work.
+- Discover supporting jobs instead of assuming the prompt listed them all.
+- Distinguish obvious category-standard additions from debatable product choices.
+- Distinguish story-derived obvious additions from debatable product choices.
+- Distinguish north-star product thinking from current-milestone commitment.
+- Confirm debatable product choices with the user instead of silently baking them in.
 
-**User Review Gate:**
-After the spec review loop passes, ask the user to review the written spec before proceeding:
+## Review Gate
 
-> "Spec written and committed to `<path>`. Please review it and let me know if you want to make any changes before we start writing out the implementation plan."
+After writing the spec, ask the user to review it before moving on:
 
-Wait for the user's response. If they request changes, make them and re-run the spec review loop. Only proceed once the user approves.
+`Spec written and committed to <path>. Please review it and let me know if you want any changes before we start the implementation plan.`
 
-**Implementation:**
-
-- Invoke the writing-plans skill to create a detailed implementation plan
-- Do NOT invoke any other skill. writing-plans is the next step.
-
-## Key Principles
-
-- **One question at a time** - Don't overwhelm with multiple questions
-- **Multiple choice preferred** - Easier to answer than open-ended when possible
-- **YAGNI ruthlessly** - Remove unnecessary features from all designs
-- **Explore alternatives** - Always propose 2-3 approaches before settling
-- **Incremental validation** - Present design, get approval before moving on
-- **Be flexible** - Go back and clarify when something doesn't make sense
-
-## Visual Companion
-
-A browser-based companion for showing mockups, diagrams, and visual options during brainstorming. Available as a tool — not a mode. Accepting the companion means it's available for questions that benefit from visual treatment; it does NOT mean every question goes through the browser.
-
-**Offering the companion:** When you anticipate that upcoming questions will involve visual content (mockups, layouts, diagrams), offer it once for consent:
-> "Some of what we're working on might be easier to explain if I can show it to you in a web browser. I can put together mockups, diagrams, comparisons, and other visuals as we go. This feature is still new and can be token-intensive. Want to try it? (Requires opening a local URL)"
-
-**This offer MUST be its own message.** Do not combine it with clarifying questions, context summaries, or any other content. The message should contain ONLY the offer above and nothing else. Wait for the user's response before continuing. If they decline, proceed with text-only brainstorming.
-
-**Per-question decision:** Even after the user accepts, decide FOR EACH QUESTION whether to use the browser or the terminal. The test: **would the user understand this better by seeing it than reading it?**
-
-- **Use the browser** for content that IS visual — mockups, wireframes, layout comparisons, architecture diagrams, side-by-side visual designs
-- **Use the terminal** for content that is text — requirements questions, conceptual choices, tradeoff lists, A/B/C/D text options, scope decisions
-
-A question about a UI topic is not automatically a visual question. "What does personality mean in this context?" is a conceptual question — use the terminal. "Which wizard layout works better?" is a visual question — use the browser.
-
-If they agree to the companion, read the detailed guide before proceeding:
-`skills/brainstorming/visual-companion.md`
+Only after approval should you invoke `writing-plans`.

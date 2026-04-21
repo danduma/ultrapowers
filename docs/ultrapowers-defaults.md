@@ -1,0 +1,36 @@
+# Ultrapowers Defaults
+
+This file is the canonical summary of the fork's opinionated defaults.
+
+## Workflow
+
+- Work in the current repository by default.
+- Do not create branches unless the user explicitly asks.
+- Do not create worktrees unless the user explicitly asks or isolation is genuinely necessary.
+- Keep ceremony proportional to the task.
+
+## Planning
+
+- Use user stories when they clarify intent, value, or acceptance criteria.
+- Prefer concrete specs and plans over vague checklists.
+- Keep workflow discipline, but do not invent process overhead the user did not ask for.
+- Run a PM-style pass before completeness work for app and product surfaces.
+- Derive usable-v1 completeness primarily from user stories and journeys.
+- Use familiar product archetypes as a secondary backstop, not the primary source of truth.
+- Expand familiar product archetypes toward a usable v1, not just a literal shell.
+- Discover supporting jobs aggressively instead of assuming the prompt listed them all.
+- Treat milestone slicing as delivery sequencing, not as permission to forget the full product vision.
+- Confirm non-obvious, costly, or strongly opinionated additions with the user before locking them in.
+
+## Frontend
+
+- Default UI work to `shadcn/ui` unless the user says otherwise.
+- Start app UI by choosing a ShadCN Block before inventing a layout from scratch.
+- Treat desktop and mobile as first-class targets from the beginning.
+- Build responsiveness into the first implementation pass.
+
+## Architecture
+
+- Do not default to file-based routing.
+- Prefer explicit routing choices unless the framework or existing codebase makes another pattern necessary.
+- Preserve existing project conventions when the human asks to work within an established system.

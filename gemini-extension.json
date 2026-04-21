@@ -1,6 +1,6 @@
 {
-  "name": "superpowers",
-  "description": "Core skills library: TDD, debugging, collaboration patterns, and proven techniques",
+  "name": "ultrapowers",
+  "description": "Opinionated skills library for agentic product development, TDD, debugging, and practical workflows",
   "version": "5.0.7",
   "contextFileName": "GEMINI.md"
 }

@@ -1,14 +1,13 @@
 {
-  "name": "superpowers",
-  "displayName": "Superpowers",
-  "description": "Core skills library: TDD, debugging, collaboration patterns, and proven techniques",
+  "name": "ultrapowers",
+  "displayName": "Ultrapowers",
+  "description": "Opinionated skills library for agentic product development, TDD, debugging, and practical workflows",
   "version": "5.0.7",
   "author": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "Ultrapowers contributors"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/danduma/ultrapowers",
+  "repository": "https://github.com/danduma/ultrapowers",
   "license": "MIT",
   "keywords": [
     "skills",
@@ -16,7 +15,9 @@
     "debugging",
     "collaboration",
     "best-practices",
-    "workflows"
+    "workflows",
+    "shadcn-ui",
+    "responsive-design"
   ],
   "skills": "./skills/",
   "agents": "./agents/",

@@ -28,6 +28,10 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 Thinking "skip TDD just this once"? Stop. That's rationalization.
 
+## UI-Specific Note
+
+When the task is UI work, choose the design system and starting block or pattern first, then write tests around the intended behavior and rendering. In Ultrapowers, that usually means `shadcn/ui` plus a ShadCN Block for app UI unless the user says otherwise.
+
 ## The Iron Law
 
 ```

@@ -37,6 +37,29 @@ BEFORE claiming any status or expressing satisfaction:
 Skip any step = lying, not verifying
 ```
 
+## Product-Surface Verification
+
+When the work involves an app, UI, or product surface, verification must cover more than whether a single requested feature works.
+
+Also verify:
+
+- the primary user stories are actually supported,
+- the primary user journey works end-to-end,
+- return/revisit flows work when they are part of the product,
+- expected empty states are present,
+- expected loading, waiting, or in-progress states are visible,
+- expected error and recovery states are present,
+- expected completed or success states are understandable,
+- expected status-awareness flows are present,
+- the state model is represented correctly,
+- operational readiness expectations are met for the approved scope,
+- instrumentation and observability exist where the approved scope depends on them,
+- onboarding and discoverability work for first-run or empty-state use,
+- risk and trust surfaces are handled well enough to avoid silent failure, ambiguous state, or obvious loss of confidence,
+- baseline expected v1 surfaces and inferred behaviors from the approved story set, spec, or plan are actually present.
+
+Do not confuse "the requested control exists" with "the product is usable."
+
 ## Common Failures
 
 | Claim | Requires | Not Sufficient |

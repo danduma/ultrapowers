@@ -1,198 +1,116 @@
-# Superpowers
+# Ultrapowers
 
-Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
+Ultrapowers is an opinionated software development methodology for coding agents. It starts from `obra/superpowers`, then rewrites the defaults to better fit practical product work: lighter local workflows, clearer user intent, stronger frontend defaults, and less ceremony unless the user actually wants it.
 
-## How it works
+## Core Defaults
 
-It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. 
+- Work in the current repository by default.
+- Never create a branch or worktree unless the user explicitly asks or isolation is genuinely necessary.
+- Use user stories in specs and plans when they clarify behavior.
+- Default UI work to `shadcn/ui`.
+- Start app UI from a ShadCN Block before inventing a layout from scratch.
+- Treat desktop and mobile responsiveness as first-class from the beginning.
+- Do not default to file-based routing.
+- Expand familiar product archetypes toward a usable v1 instead of stopping at literal requested controls.
+- Infer expected product surfaces from what users need to do, revisit, recover from, and understand.
+- Think ambitiously about the full product, then deliver it in coherent milestones without forgetting the bigger vision.
 
-Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. 
+## Basic Workflow
 
-After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. 
-
-Next up, once you say "go", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.
-
-There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.
-
-
-## Sponsorship
-
-If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring my opensource work](https://github.com/sponsors/obra).
-
-Thanks! 
-
-- Jesse
-
-
-## Installation
-
-**Note:** Installation differs by platform. 
-
-### Claude Code Official Marketplace
-
-Superpowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/superpowers)
-
-Install the plugin from Anthropic's official marketplace:
-
-```bash
-/plugin install superpowers@claude-plugins-official
-```
-
-### Claude Code (Superpowers Marketplace)
-
-The Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.
-
-In Claude Code, register the marketplace first:
-
-```bash
-/plugin marketplace add obra/superpowers-marketplace
-```
-
-Then install the plugin from this marketplace:
-
-```bash
-/plugin install superpowers@superpowers-marketplace
-```
-
-### OpenAI Codex CLI
-
-- Open plugin search interface
-
-```bash
-/plugins
-```
-
-Search for Superpowers
-
-```bash
-superpowers
-```
-
-Select `Install Plugin`
-
-### OpenAI Codex App
-
-- In the Codex app, click on Plugins in the sidebar.
-- You should see `Superpowers` in the Coding section. 
-- Click the `+` next to Superpowers and follow the prompts.
-
-
-### Cursor (via Plugin Marketplace)
-
-In Cursor Agent chat, install from marketplace:
-
-```text
-/add-plugin superpowers
-```
-
-or search for "superpowers" in the plugin marketplace.
-
-### OpenCode
-
-Tell OpenCode:
-
-```
-Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
-```
-
-**Detailed docs:** [docs/README.opencode.md](docs/README.opencode.md)
-
-### GitHub Copilot CLI
-
-```bash
-copilot plugin marketplace add obra/superpowers-marketplace
-copilot plugin install superpowers@superpowers-marketplace
-```
-
-### Gemini CLI
-
-```bash
-gemini extensions install https://github.com/obra/superpowers
-```
-
-To update:
-
-```bash
-gemini extensions update superpowers
-```
-
-## The Basic Workflow
-
-1. **brainstorming** - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.
-
-2. **using-git-worktrees** - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.
-
-3. **writing-plans** - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.
-
-4. **subagent-driven-development** or **executing-plans** - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.
-
-5. **test-driven-development** - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.
-
-6. **requesting-code-review** - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.
-
-7. **finishing-a-development-branch** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.
-
-**The agent checks for relevant skills before any task.** Mandatory workflows, not suggestions.
-
-## What's Inside
-
-### Skills Library
-
-**Testing**
-- **test-driven-development** - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)
-
-**Debugging**
-- **systematic-debugging** - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)
-- **verification-before-completion** - Ensure it's actually fixed
-
-**Collaboration** 
-- **brainstorming** - Socratic design refinement
-- **writing-plans** - Detailed implementation plans
-- **executing-plans** - Batch execution with checkpoints
-- **dispatching-parallel-agents** - Concurrent subagent workflows
-- **requesting-code-review** - Pre-review checklist
-- **receiving-code-review** - Responding to feedback
-- **using-git-worktrees** - Parallel development branches
-- **finishing-a-development-branch** - Merge/PR decision workflow
-- **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
-
-**Meta**
-- **writing-skills** - Create new skills following best practices (includes testing methodology)
-- **using-superpowers** - Introduction to the skills system
+1. **brainstorming** - clarify the goal, shape the design, and write a spec.
+2. **writing-plans** - turn the approved spec into an implementation plan.
+3. **subagent-driven-development** or **executing-plans** - implement the plan.
+4. **test-driven-development** - enforce red/green development during implementation.
+5. **requesting-code-review** - review changes before calling the work done.
+6. **verification-before-completion** - verify outcomes before claiming success.
+7. **finishing-a-development-branch** - only when branch-based work actually needs to be wrapped up.
 
 ## Philosophy
 
-- **Test-Driven Development** - Write tests first, always
-- **Systematic over ad-hoc** - Process over guessing
-- **Complexity reduction** - Simplicity as primary goal
-- **Evidence over claims** - Verify before declaring success
+- **Skills first** - check for the right workflow before acting.
+- **User intent over ritual** - follow the user's instructions even when they override defaults.
+- **Lightweight by default** - avoid branches, worktrees, and extra ceremony unless they solve a real problem.
+- **Product-minded planning** - use user stories and acceptance thinking where it helps.
+- **PM pass first** - discover supporting jobs, state model, ops, observability, onboarding, and trust surfaces before deciding what belongs in the milestone.
+- **Story-derived completeness** - derive missing interface behavior from user stories and journeys first, then use familiar archetypes as a sanity check.
+- **Usable v1 completeness** - for familiar app types, include the expected baseline surfaces and states that make the product actually usable.
+- **North star, then milestone** - define the ambitious product first, then choose the current slice without erasing the rest.
+- **Frontend with opinions** - prefer `shadcn/ui`, ShadCN Blocks, and responsive layouts from the start.
+- **Explicit architecture** - do not drift into file-based routing unless the project or user specifically wants it.
+- **Evidence over claims** - run the checks before saying something works.
 
-Read [the original release announcement](https://blog.fsck.com/2025/10/09/superpowers/).
+## What's Inside
 
-## Contributing
+### Core Skills
 
-The general contribution process for Superpowers is below. Keep in mind that we don't generally accept contributions of new skills and that any updates to skills must work across all of the coding agents we support.
+- **using-ultrapowers** - establishes skill discipline and instruction priority.
+- **brainstorming** - turns ideas into an approved design and spec.
+- **writing-plans** - turns a spec into a concrete implementation plan.
+- **executing-plans** - executes a written plan inline.
+- **subagent-driven-development** - executes a written plan with subagents when available.
+- **test-driven-development** - enforces red/green/refactor.
+- **systematic-debugging** - structured debugging workflow.
+- **verification-before-completion** - final proof before completion.
+- **requesting-code-review** - asks for review with a bug-finding mindset.
+- **receiving-code-review** - helps evaluate and apply review feedback.
+- **dispatching-parallel-agents** - coordinates parallel independent tasks.
+- **using-git-worktrees** - optional isolation workflow when the user wants it.
+- **finishing-a-development-branch** - wraps up branch-based work when relevant.
+- **writing-skills** - updates or creates skills with testing discipline.
 
-1. Fork the repository
-2. Switch to the 'dev' branch
-3. Create a branch for your work
-4. Follow the `writing-skills` skill for creating and testing new and modified skills
-5. Submit a PR, being sure to fill in the pull request template.
+## Fork Notes
 
-See `skills/writing-skills/SKILL.md` for the complete guide.
+Ultrapowers is intentionally free to diverge from upstream. This repository vendors the upstream project once, then evolves it in place. The goal is not to preserve upstream parity. The goal is to create a reusable skill system with stronger defaults for practical product engineering.
 
-## Updating
+Read [docs/ultrapowers-defaults.md](docs/ultrapowers-defaults.md) for the canonical fork defaults.
 
-Superpowers updates are somewhat coding-agent dependent, but are often automatic.
+## Installation
 
-## License
+Ultrapowers is not currently published in the same plugin marketplaces as `obra/superpowers`. Install it directly from this GitHub repository.
 
-MIT License - see LICENSE file for details
+Repository:
 
-## Community
+```text
+https://github.com/danduma/ultrapowers
+```
 
-Superpowers is built by [Jesse Vincent](https://blog.fsck.com) and the rest of the folks at [Prime Radiant](https://primeradiant.com).
+### Codex
 
-- **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support, questions, and sharing what you're building with Superpowers
-- **Issues**: https://github.com/obra/superpowers/issues
-- **Release announcements**: [Sign up](https://primeradiant.com/superpowers/) to get notified about new versions
+1. Clone the repository:
+
+```bash
+git clone https://github.com/danduma/ultrapowers.git ~/.codex/ultrapowers
+```
+
+2. Expose the skills to Codex:
+
+```bash
+mkdir -p ~/.agents/skills
+ln -s ~/.codex/ultrapowers/skills ~/.agents/skills/ultrapowers
+```
+
+3. Restart Codex.
+
+Optional for subagent-heavy skills:
+
+```toml
+[features]
+multi_agent = true
+```
+
+### OpenCode
+
+Add Ultrapowers to the `plugin` array in your `opencode.json`:
+
+```json
+{
+  "plugin": ["ultrapowers@git+https://github.com/danduma/ultrapowers.git"]
+}
+```
+
+Restart OpenCode, then load a skill such as `ultrapowers/brainstorming`.
+
+### Notes
+
+- This repo includes plugin metadata for multiple harnesses, but it is not yet available through official plugin marketplaces.
+- If you want to pin a version, use a tag or commit hash in the git URL.
