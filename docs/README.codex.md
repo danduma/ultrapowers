@@ -63,7 +63,8 @@ The important behavioral defaults come from `using-ultrapowers`, plus the rewrit
 - desktop and mobile responsiveness from the start,
 - no file-based routing by default,
 - strong backend instrumentation with a scriptable control plane when the project has backend workflows,
-- no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists.
+- no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists,
+- explicit persistence design for meaningful UI settings, including storage location and lifecycle behavior.
 
 ## Updating
 

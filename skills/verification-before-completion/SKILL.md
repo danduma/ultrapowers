@@ -52,6 +52,7 @@ Also verify:
 - expected completed or success states are understandable,
 - expected status-awareness flows are present,
 - the state model is represented correctly,
+- persistence behavior for settings, preferences, drafts, and other user-managed state matches the approved design,
 - operational readiness expectations are met for the approved scope,
 - instrumentation and observability exist where the approved scope depends on them,
 - real errors are surfaced rather than silently swallowed or replaced with vague placeholders,
@@ -59,6 +60,12 @@ Also verify:
 - risk and trust surfaces are handled well enough to avoid silent failure, ambiguous state, or obvious loss of confidence,
 - when the scope includes a frontend/backend boundary, frontend-visible failures preserve the real error details and stack traces expected by the approved design,
 - baseline expected v1 surfaces and inferred behaviors from the approved story set, spec, or plan are actually present.
+
+When the scope includes settings or preferences, also verify:
+
+- each meaningful setting persists or does not persist exactly as designed,
+- the storage location and ownership model match the approved plan,
+- refresh, restart, sign-out, reset, and migration behavior work as intended for the approved scope.
 
 Do not confuse "the requested control exists" with "the product is usable."
 

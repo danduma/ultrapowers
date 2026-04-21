@@ -30,11 +30,13 @@ Do not implement, scaffold, or change behavior until the design has been present
 - architecture and boundaries,
 - data flow and error handling,
 - error transparency expectations,
+- persistence model for settings, preferences, and user-managed state,
 - testing strategy,
 - user stories when they help define behavior,
 - acceptance criteria when they clarify completion,
 - supporting jobs,
 - state model,
+- persistence and ownership model for settings and preferences,
 - operational readiness,
 - instrumentation and observability expectations,
 - control-plane and scriptability expectations,
@@ -56,6 +58,7 @@ During this pass:
 - aggressively discover the supporting jobs around that core job,
 - identify user segmentation and role clarity when the product genuinely has multiple roles,
 - define the state model,
+- define the persistence model for settings, preferences, drafts, and other user-managed state,
 - define operational readiness expectations,
 - define instrumentation and observability expectations,
 - define control-plane expectations for inspection, replay, administration, and end-to-end testing,
@@ -88,6 +91,7 @@ During this pass:
 - infer the interface surfaces and system behaviors required to satisfy those stories,
 - cover expected empty, loading, running, waiting, error, completed, and recovery states,
 - cover navigation, hierarchy, and status signaling,
+- cover what settings and preferences exist, whether each one persists, and what happens across reload, sign-out, device changes, reset, and migration,
 - cover desktop and mobile behavior,
 - use the PM pass outputs as inputs,
 - use `story-derived-completeness.md` as the primary reference,
@@ -108,6 +112,7 @@ When the work involves an app, UI, or product surface, assume these defaults unl
 - avoid file-based routing by default,
 - prefer strong backend instrumentation and a scriptable control plane for backend workflows,
 - prefer surfacing full error details and stack traces to the frontend instead of replacing them with vague generic failures,
+- make persistence behavior for settings explicit instead of leaving storage choices implicit,
 - aim for a usable v1, not just the smallest literal UI that exposes requested controls.
 - think ambitiously about the full product, then sequence it into coherent milestones.
 

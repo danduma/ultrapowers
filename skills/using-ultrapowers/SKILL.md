@@ -42,6 +42,8 @@ If yes, use it before continuing.
 - When a project has backend or agent workflows, prefer a fully instrumented control plane: persist meaningful events, tool calls, actions, results, errors, and state transitions, and expose them through a CLI or other scriptable interface so the full system can be inspected and tested without the UI.
 - Do not default to silent, masked, or over-abstracted errors.
 - When a project has a frontend, prefer surfacing full backend error details and stack traces to the frontend so failures stay visible, debuggable, and testable end-to-end.
+- Treat persistence of settings and preferences as explicit design work.
+- For every meaningful UI setting, define whether it persists, where it is stored, how it is read and written, who owns it, and how reset, sync, migration, and testing are handled.
 
 See `docs/ultrapowers-defaults.md` for the canonical fork defaults.
 

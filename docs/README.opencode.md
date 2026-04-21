@@ -38,7 +38,8 @@ use skill tool to load ultrapowers/brainstorming
 - responsive desktop and mobile design from the start,
 - avoid file-based routing by default,
 - strong backend instrumentation with a scriptable control plane when the project has backend workflows,
-- no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists.
+- no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists,
+- explicit persistence design for meaningful UI settings, including storage location and lifecycle behavior.
 
 ## Personal Skills
 

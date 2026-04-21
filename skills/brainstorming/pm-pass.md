@@ -7,6 +7,7 @@ Use this reference before the completeness pass for app, UI, and product-surface
 - The first user is usually the human builder unless the prompt says otherwise.
 - The core job is usually already implied by the request.
 - The missing work is often in the supporting jobs, state model, trust model, and operational reality.
+- Agents also tend to under-specify persistence. Counteract that tendency by making storage and lifecycle decisions explicit for settings and user-managed state.
 - Agents tend to underbuild unless forced to think beyond the literal prompt. Counteract that tendency here.
 
 ## PM Pass Outputs
@@ -18,6 +19,7 @@ Produce or infer these sections when relevant:
 - Supporting Jobs
 - User Segmentation And Role Clarity
 - State Model
+- Persistence Model
 - Operational Readiness
 - Instrumentation And Observability
 - Onboarding And Discoverability
@@ -71,6 +73,20 @@ Examples:
 - completed,
 - archived,
 - forked.
+
+### Persistence Model
+
+Define where meaningful settings, preferences, drafts, and user-managed state live and how they behave over time.
+
+Ask explicitly:
+
+- does this setting persist at all,
+- is it device-local, browser-local, file-based, workspace-local, or account-level,
+- what is the source of truth,
+- how is it serialized and versioned,
+- when is it loaded and saved,
+- how are conflicts, resets, migrations, and deletions handled,
+- what should survive refresh, restart, sign-out, reinstall, or device change.
 
 ### Operational Readiness
 

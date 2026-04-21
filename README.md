@@ -23,6 +23,7 @@ This works best if you are solo developer who just wants to get a decent product
 - Do not default to file-based routing.
 - Prefer strong backend instrumentation and a fully instrumented control plane.
 - Prefer explicit, non-silent error handling with full error details and stack traces surfaced to the frontend.
+- Make persistence of UI settings explicit: decide per setting whether it persists, where it is stored, and how lifecycle concerns like reset and migration work.
 - Expand familiar product archetypes toward a usable v1 instead of stopping at literal requested controls.
 - Infer expected product surfaces from what users need to do, revisit, recover from, and understand.
 - Think ambitiously about the full product, then deliver it in coherent milestones without forgetting the bigger vision.
@@ -51,6 +52,7 @@ This works best if you are solo developer who just wants to get a decent product
 - **Explicit architecture** - do not drift into file-based routing unless the project or user specifically wants it.
 - **Instrumented by default** - capture meaningful backend events, actions, errors, and outcomes in durable logs, and expose a CLI or other scriptable control plane so workflows can be exercised and verified without the UI.
 - **No silent failures** - do not hide, overly abstract, or hand-wave errors; surface real error details and stack traces to the frontend so failures are inspectable and testable.
+- **Persistence is designed, not implied** - for each meaningful UI setting, make storage location, ownership, sync model, reset path, and migration behavior explicit.
 - **Evidence over claims** - run the checks before saying something works.
 
 ## What's Inside

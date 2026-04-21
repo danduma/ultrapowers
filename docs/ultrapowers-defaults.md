@@ -38,3 +38,5 @@ This file is the canonical summary of the fork's opinionated defaults.
 - When the project has backend workflows, prefer a fully instrumented control plane: every meaningful action, state transition, error, and result should be captured in durable logs or events, and exposed through a CLI or other scriptable interface so end-to-end behavior can be tested without a UI.
 - Do not default to silent, hidden, or heavily abstracted failures.
 - When the project has a frontend and backend boundary, prefer surfacing full error details and stack traces to the frontend so the real failure remains visible during development, debugging, and automated testing.
+- Treat persistence of UI settings and preferences as an explicit product and architecture decision.
+- For each meaningful setting, specify whether it persists, where it lives, who owns it, how it is serialized, when it is read and written, whether it is device-local or account-level, and how reset, migration, backup, and recovery are handled.

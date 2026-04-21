@@ -78,6 +78,7 @@ When relevant, make sure the plan includes treatment for:
 
 - supporting jobs that matter in this milestone,
 - state model requirements,
+- persistence model requirements for settings, preferences, drafts, and user-managed state,
 - operational readiness requirements,
 - instrumentation and observability requirements,
 - control-plane and scriptability requirements,
@@ -97,6 +98,7 @@ Unless the user says otherwise, frontend plans should preserve these assumptions
 - do not default to file-based routing.
 - backend and agent workflows should usually include durable event logging plus a CLI or other scriptable control plane so tests can drive the system without the UI.
 - when there is a frontend, plans should usually preserve full backend error details and stack traces through to the frontend rather than replacing them with vague generic errors.
+- plans should explicitly say for each meaningful UI setting whether it persists, where it is stored, how it is loaded and saved, and how reset, migration, and verification work.
 
 ## Self-Review
 

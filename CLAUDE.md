@@ -25,6 +25,8 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Prefer a fully instrumented control plane for backend and product work: persist meaningful events, actions, errors, and state transitions, and expose them through a CLI or other scriptable interface so the system can be tested end-to-end without relying on the UI.
 - Do not allow silent or heavily abstracted errors by default.
 - Prefer end-to-end error transparency: the frontend should receive the full error details and stack trace so failures stay inspectable, testable, and impossible to hand-wave away.
+- Treat persistence of UI settings as an explicit design concern, not an implementation afterthought.
+- For every meaningful UI setting, make it explicit whether it persists, where it is stored, how it is encoded, how it is loaded and updated, how it syncs across sessions/devices/users if relevant, and how it is reset, migrated, and tested.
 
 ## Change Quality
 

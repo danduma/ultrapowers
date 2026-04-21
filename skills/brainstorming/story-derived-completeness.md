@@ -77,6 +77,8 @@ Examples:
 
 These stories imply spinners, badges, state labels, progress indicators, and completion signals.
 
+Persistence questions often cut across these categories. When a story depends on preferences, drafts, history, or configuration, ask what must persist, where it should live, and what the user expects to survive across sessions and devices.
+
 ### Mutation Stories
 
 How does a user revise, retry, fork, resend, undo, or branch from earlier state?
@@ -108,12 +110,15 @@ For each derived story, ask:
 3. What visible state does the user need?
 4. What happens when this fails?
 5. What has to be preserved when the user comes back later?
+6. Which settings or preferences does this touch, and should each persist?
+7. Where should that persisted state live, and who owns it?
+8. What happens on reset, migration, logout, or device change?
 
 Also ask:
 
-6. What product state does this touch?
-7. What observability or status signal should exist?
-8. What would make this feel untrustworthy if it went wrong?
+9. What product state does this touch?
+10. What observability or status signal should exist?
+11. What would make this feel untrustworthy if it went wrong?
 
 ## What Counts As Obvious Vs Debatable
 
