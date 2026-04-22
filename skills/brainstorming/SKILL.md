@@ -83,7 +83,7 @@ During this pass:
 - derive return/revisit stories,
 - derive failure/recovery stories,
 - derive status-awareness stories,
-- derive mutation stories when the product involves editing, retrying, resubmitting, branching, or other state-changing actions,
+- derive mutation stories when the product involves editing, retrying, resubmitting, forking, or other state-changing actions,
 - separate:
   - explicitly requested capabilities,
   - baseline expected v1 surfaces and states inferred from the stories,

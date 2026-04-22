@@ -56,7 +56,8 @@ The important behavioral defaults come from `using-ultrapowers`, plus the rewrit
 ## Default Posture
 
 - current-repo work by default,
-- no branch or worktree creation unless the user asks,
+- YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
+- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
 - user stories when they clarify plans,
 - `shadcn/ui` for UI work,
 - ShadCN Blocks as the first stop for app UI,

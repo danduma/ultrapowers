@@ -12,7 +12,7 @@ Write a concrete implementation plan that another capable engineer could execute
 ## Defaults
 
 - Work in the current repository unless the user asked for isolation.
-- Do not assume a dedicated worktree or branch.
+- Do not assume any extra repository isolation.
 - Keep the plan DRY, YAGNI, and test-first.
 
 ## Save Plans To
@@ -107,7 +107,7 @@ Before execution, check:
 1. every spec requirement maps to a task,
 2. there are no placeholders or undefined references,
 3. names and interfaces stay consistent across tasks,
-4. the plan does not assume branches or worktrees unless the user asked for them,
+4. the plan does not assume extra repository isolation unless the user asked for it,
 5. the plan includes obvious baseline expected v1 surfaces and states,
 6. the plan does not lock in non-obvious additions without user confirmation,
 7. the current milestone is clearly separated from the north-star product,

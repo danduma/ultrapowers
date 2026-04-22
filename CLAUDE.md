@@ -2,13 +2,14 @@
 
 ## Purpose
 
-This repository is a local fork of `obra/superpowers` that we are reshaping into `ultrapowers`. Treat it as our own evolving skill system, not as an upstream contribution branch.
+This repository is a local fork of `obra/superpowers` that we are reshaping into `ultrapowers`. Treat it as our own evolving skill system, not as an upstream contribution effort.
 
 ## Working Rules For Agents
 
 - Read the local skill files before changing them.
 - Preserve the fork's opinionated defaults unless the human explicitly asks for an exception.
-- Do not create branches or worktrees unless the human explicitly asks for them.
+- YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
+- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
 - Prefer direct edits inside the current repository.
 - Keep changes coherent across docs, skills, and references.
 - When changing behavior-shaping content, update the nearest supporting docs so the defaults stay discoverable.

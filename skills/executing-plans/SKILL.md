@@ -12,7 +12,6 @@ Implement a written plan carefully, review it first, then execute it step by ste
 ## Default Posture
 
 - Execute in the current repository unless the user asked for isolation.
-- Do not assume a worktree or branch exists.
 - Stop and ask for clarification when the plan or repository state creates real ambiguity.
 
 ## Process
@@ -22,7 +21,7 @@ Implement a written plan carefully, review it first, then execute it step by ste
 3. Execute tasks in order.
 4. Run the specified verifications.
 5. Use `verification-before-completion` before claiming success.
-6. Only use `finishing-a-development-branch` if branch-based wrap-up is actually relevant.
+6. Finish the work in place unless the user explicitly asked for a different repository workflow.
 
 ## When To Stop
 

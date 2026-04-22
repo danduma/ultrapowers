@@ -5,8 +5,8 @@ This file is the canonical summary of the fork's opinionated defaults.
 ## Workflow
 
 - Work in the current repository by default.
-- Do not create branches unless the user explicitly asks.
-- Do not create worktrees unless the user explicitly asks or isolation is genuinely necessary.
+- YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
+- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
 - Keep ceremony proportional to the task.
 
 ## Planning

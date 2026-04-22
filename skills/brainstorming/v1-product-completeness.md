@@ -43,7 +43,7 @@ This file is a sanity check and prior, not the primary source of truth. Derive c
 
 - advanced filtering or search,
 - rich multi-pane monitoring surfaces,
-- branching conversations,
+- forked conversations,
 - advanced model/provider configuration,
 - collaborative or multi-user features.
 

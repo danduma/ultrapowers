@@ -44,7 +44,7 @@ await execFileAsync('git', ['init'], { cwd: projectDir });
 
 ### 3. Ask: What Called This?
 ```typescript
-WorktreeManager.createSessionWorktree(projectDir, sessionId)
+WorkspaceManager.createSessionWorkspace(projectDir, sessionId)
   → called by Session.initializeWorkspace()
   → called by Session.create()
   → called by test at Project.create()
@@ -112,7 +112,7 @@ Runs tests one-by-one, stops at first polluter. See script for usage.
 
 **Trace chain:**
 1. `git init` runs in `process.cwd()` ← empty cwd parameter
-2. WorktreeManager called with empty projectDir
+2. WorkspaceManager called with empty projectDir
 3. Session.create() passed empty string
 4. Test accessed `context.tempDir` before beforeEach
 5. setupCoreTest() returns `{ tempDir: '' }` initially

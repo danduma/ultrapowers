@@ -81,7 +81,7 @@ Persistence questions often cut across these categories. When a story depends on
 
 ### Mutation Stories
 
-How does a user revise, retry, fork, resend, undo, or branch from earlier state?
+How does a user revise, retry, fork, resend, undo, or continue from earlier state?
 
 Examples:
 
@@ -89,7 +89,7 @@ Examples:
 - "As a user, I want to fork a conversation from a prior turn."
 - "As a user, I want to retry a failed generation."
 
-These stories imply edit/resend flows, truncation behavior, branching, retry actions, and explicit state transitions.
+These stories imply edit/resend flows, truncation behavior, forking, retry actions, and explicit state transitions.
 
 ### Mobile-Use Stories
 

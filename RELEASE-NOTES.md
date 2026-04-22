@@ -13,7 +13,7 @@ It is not a copy of upstream `superpowers` history. We only record the changes t
 
 ### Core Defaults
 
-- made current-repo work, anti-worktree/anti-branch by default behavior more central in the docs.
+- made current-repo work by default behavior more central in the docs.
 - reinforced product-minded defaults: user stories when useful, `shadcn/ui` for UI work, ShadCN Blocks as the first stop for app UI, desktop and mobile responsiveness from the beginning, and no file-based routing by default.
 - emphasized usable-v1 completeness and north-star-first thinking instead of stopping at literal requested controls.
 

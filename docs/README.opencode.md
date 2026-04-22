@@ -31,7 +31,8 @@ use skill tool to load ultrapowers/brainstorming
 ## Default Posture
 
 - current-repo work by default,
-- no branch or worktree creation unless the user asks,
+- YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
+- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
 - user stories when they help define behavior,
 - `shadcn/ui` as the default UI system,
 - start app UI from a ShadCN Block,

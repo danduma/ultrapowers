@@ -7,7 +7,7 @@ Why should you use Ultrapowers? Because you don't want to
 - waste the first 2 days reimplementing basic usage patterns like an AI chat app
 - waste another day tweaking the interface so it looks good on mobile
 - waste another day iterating over common API errors
-- waste 100 days in worktree/branch hell
+- waste 100 days in unnecessary workflow ceremony
 
 Ultrapowers is an opinionated fork of `obra/superpowers` that tries to be more practical and usable for product engineering. It has strong defaults to better fit practical product work and less ceremony. 
 
@@ -15,7 +15,9 @@ This works best if you are solo developer who just wants to get a decent product
 
 ## Core Defaults
 
-- Work in the current repository by default, never create a branch or worktree unless the user explicitly asks or isolation is unavoidable.
+- Work in the current repository by default.
+- YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
+- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
 - Use user stories in specs and plans when they clarify behavior.
 - Default UI work to `shadcn/ui`.
 - Start app UI from a shadcn/ui block or pattern, no point in inventing a layout from scratch.
@@ -36,13 +38,13 @@ This works best if you are solo developer who just wants to get a decent product
 4. **test-driven-development** - enforce red/green development during implementation.
 5. **requesting-code-review** - review changes before calling the work done.
 6. **verification-before-completion** - verify outcomes before claiming success.
-7. **finishing-a-development-branch** - only when branch-based work actually needs to be wrapped up.
 
 ## Philosophy
 
 - **Skills first** - check for the right workflow before acting.
 - **User intent over ritual** - follow the user's instructions even when they override defaults.
-- **Lightweight by default** - avoid branches, worktrees, and extra ceremony unless they solve a real problem.
+- **No surprise repo workflow** - stay in the current repository unless the user explicitly instructs otherwise.
+- **Lightweight by default** - avoid extra ceremony unless it solves a real problem.
 - **Product-minded planning** - use user stories and acceptance thinking where it helps.
 - **PM pass first** - discover supporting jobs, state model, ops, observability, onboarding, and trust surfaces before deciding what belongs in the milestone.
 - **Story-derived completeness** - derive missing interface behavior from user stories and journeys first, then use familiar archetypes as a sanity check.
@@ -70,8 +72,6 @@ This works best if you are solo developer who just wants to get a decent product
 - **requesting-code-review** - asks for review with a bug-finding mindset.
 - **receiving-code-review** - helps evaluate and apply review feedback.
 - **dispatching-parallel-agents** - coordinates parallel independent tasks.
-- **using-git-worktrees** - optional isolation workflow when the user wants it.
-- **finishing-a-development-branch** - wraps up branch-based work when relevant.
 - **writing-skills** - updates or creates skills with testing discipline.
 
 ## Fork Notes
