@@ -11,6 +11,8 @@ Turn rough ideas into an approved design before implementation begins.
 
 Do not implement, scaffold, or change behavior until the design has been presented and approved.
 
+For app, UI, and product-surface work, do not skip the PM pass. It is a required part of brainstorming in Ultrapowers.
+
 ## Checklist
 
 1. Explore project context.
@@ -50,6 +52,8 @@ Do not implement, scaffold, or change behavior until the design has been present
 ## PM Pass
 
 For app, UI, and product-surface work, run a PM pass before the completeness pass.
+
+This is mandatory default behavior for those categories of work. Do not treat it as optional polish or something to skip when the prompt seems short.
 
 During this pass:
 

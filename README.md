@@ -19,6 +19,7 @@ This works best if you are solo developer who just wants to get a decent product
 - YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
+- Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
 - Use user stories in specs and plans when they clarify behavior.
 - Default UI work to `shadcn/ui`.
 - Start app UI from a shadcn/ui block or pattern, no point in inventing a layout from scratch.
@@ -47,7 +48,7 @@ This works best if you are solo developer who just wants to get a decent product
 - **No surprise repo workflow** - stay in the current repository unless the user explicitly instructs otherwise.
 - **Lightweight by default** - avoid extra ceremony unless it solves a real problem.
 - **Product-minded planning** - use user stories and acceptance thinking where it helps.
-- **PM pass first** - discover supporting jobs, state model, ops, observability, onboarding, and trust surfaces before deciding what belongs in the milestone.
+- **PM pass first** - this is not optional for app, UI, and product-surface work. Discover supporting jobs, state model, ops, observability, onboarding, trust surfaces, and north-star product direction before deciding what belongs in the milestone.
 - **Story-derived completeness** - derive missing interface behavior from user stories and journeys first, then use familiar archetypes as a sanity check.
 - **Usable v1 completeness** - for familiar app types, include the expected baseline surfaces and states that make the product actually usable.
 - **North star, then milestone** - define the ambitious product first, then choose the current slice without erasing the rest.

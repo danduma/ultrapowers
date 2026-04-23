@@ -67,6 +67,8 @@ Each task should:
 
 If the spec uses user stories, preserve them in the plan where they clarify what behavior a task is supposed to deliver. Use them to ground scope, not as ceremony.
 
+If brainstorming ran a PM pass, preserve its outputs explicitly. Do not flatten them back into vague implementation chores.
+
 ## Preserve The Product Completeness Pass
 
 If brainstorming identified baseline expected v1 surfaces or states for a familiar product archetype, preserve them in the plan. Do not collapse the work back down to only the literal controls named in the initial prompt.

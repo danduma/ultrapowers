@@ -2,6 +2,8 @@
 
 Use this reference before the completeness pass for app, UI, and product-surface work. The goal is to think like a strong product manager: understand what the product wants to become, discover the supporting jobs around the core job, and preserve that larger vision even when delivery is staged.
 
+In Ultrapowers, this is a required default move for app, UI, and product-surface planning. If that kind of work is happening, the PM pass should be visible in the design output rather than silently skipped.
+
 ## Core Assumptions
 
 - The first user is usually the human builder unless the prompt says otherwise.

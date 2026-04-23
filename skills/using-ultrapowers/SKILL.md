@@ -34,6 +34,7 @@ If yes, use it before continuing.
 - YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
+- For app, UI, and product-surface work, run a PM pass during planning. Treat it as mandatory default behavior, not optional polish.
 - Use user stories in specs and plans when they clarify behavior or value.
 - Default UI work to `shadcn/ui` unless the user says otherwise.
 - Start app UI from a ShadCN Block before inventing a layout from scratch.
@@ -55,7 +56,7 @@ See `docs/ultrapowers-defaults.md` for the canonical fork defaults.
 
 Examples:
 
-- "Build a feature" -> `brainstorming`, then `writing-plans`, then execution
+- "Build a feature" -> `brainstorming` with a PM pass first, then `writing-plans`, then execution
 - "Fix this bug" -> `systematic-debugging`, then the relevant implementation skill
 - "Review this change" -> `requesting-code-review`
 

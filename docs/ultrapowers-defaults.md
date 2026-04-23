@@ -12,6 +12,7 @@ This file is the canonical summary of the fork's opinionated defaults.
 
 ## Planning
 
+- Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
 - Use user stories when they clarify intent, value, or acceptance criteria.
 - Prefer concrete specs and plans over vague checklists.
 - Keep workflow discipline, but do not invent process overhead the user did not ask for.
