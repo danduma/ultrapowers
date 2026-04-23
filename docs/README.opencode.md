@@ -32,7 +32,8 @@ use skill tool to load ultrapowers/brainstorming
 
 - current-repo work by default,
 - YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
-- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
+- ask the user whether we should work in worktrees as part of the planning,
+- YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - user stories when they help define behavior,
 - `shadcn/ui` as the default UI system,
 - start app UI from a ShadCN Block,

@@ -13,6 +13,7 @@ Write a concrete implementation plan that another capable engineer could execute
 
 - Work in the current repository unless the user asked for isolation.
 - Do not assume any extra repository isolation.
+- Ask the user whether we should work in worktrees before putting any extra repository isolation into the plan.
 - Keep the plan DRY, YAGNI, and test-first.
 
 ## Save Plans To

@@ -9,7 +9,8 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Read the local skill files before changing them.
 - Preserve the fork's opinionated defaults unless the human explicitly asks for an exception.
 - YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
-- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
+- Ask the user whether we should work in worktrees as part of the planning.
+- YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Prefer direct edits inside the current repository.
 - Keep changes coherent across docs, skills, and references.
 - When changing behavior-shaping content, update the nearest supporting docs so the defaults stay discoverable.
@@ -17,6 +18,7 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 ## Ultrapowers Defaults
 
 - Work in the current repository by default.
+- Ask the user whether we should work in worktrees as part of the planning.
 - Use user stories in specs and plans when they help define behavior or outcomes.
 - Default UI work to `shadcn/ui`.
 - Start app UIs from a ShadCN Block when possible.

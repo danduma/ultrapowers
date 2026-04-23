@@ -54,6 +54,7 @@ For app, UI, and product-surface work, run a PM pass before the completeness pas
 During this pass:
 
 - default the first user to the human builder unless the prompt says otherwise,
+- ask the user whether we should work in worktrees as part of the planning when repository workflow is relevant,
 - assume the core job is usually already implied by the prompt,
 - aggressively discover the supporting jobs around that core job,
 - identify user segmentation and role clarity when the product genuinely has multiple roles,

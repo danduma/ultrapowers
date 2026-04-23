@@ -6,7 +6,8 @@ This file is the canonical summary of the fork's opinionated defaults.
 
 - Work in the current repository by default.
 - YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
-- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
+- Ask the user whether we should work in worktrees as part of the planning.
+- YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Keep ceremony proportional to the task.
 
 ## Planning

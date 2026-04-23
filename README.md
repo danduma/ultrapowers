@@ -17,7 +17,8 @@ This works best if you are solo developer who just wants to get a decent product
 
 - Work in the current repository by default.
 - YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
-- YOU WILL NEVER CREATE A WORKTREE unless explicitly instructed.
+- Ask the user whether we should work in worktrees as part of the planning.
+- YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Use user stories in specs and plans when they clarify behavior.
 - Default UI work to `shadcn/ui`.
 - Start app UI from a shadcn/ui block or pattern, no point in inventing a layout from scratch.
