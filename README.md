@@ -10,7 +10,7 @@ Why should you use Ultrapowers? Because you don't want to waste your days
 - refactoring a 4000-line `page.tsx` file
 - on unnecessary ceremony
 
-This is a fork of `obra/superpowers` that aims to be more practical and usable for product engineering. It comes with strong defaults for shipping useful products quickly, with less ceremony and more attention to what users are actually trying to accomplish.
+This is a fork of [obra/superpowers](https://github.com/obra/superpowers) that aims to be more practical and usable for product engineering. It comes with strong defaults for shipping useful products quickly, with less ceremony and more attention to what users are actually trying to accomplish.
 
 Works best if you are a solo developer who wants to get a decent product out as quickly as possible.
 
