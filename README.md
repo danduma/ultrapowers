@@ -1,67 +1,50 @@
-# Ultrapowers
+# Ultrapowers - Add a PM to your coding agent
 
-Ultrapowers is an opinionated software development methodology for coding agents. It does some of the job of a PM without the faff, helping the agent think through the product requirements based on user stories.
+Ultrapowers is an opinionated software development methodology for coding agents. It does some of the job of a PM, helping the agent think through the product requirements based on user stories, and some of the work of QA (agentic user journey testing).
 
-Why should you use Ultrapowers? Because you don't want to
-- reinvent the UI wheel - just use shadcn/ui, next.js
-- waste the first 2 days reimplementing basic usage patterns like an AI chat app
-- waste another day tweaking the interface so it looks good on mobile
-- waste another day iterating over common API errors
-- waste 100 days in unnecessary workflow ceremony
+Why should you use Ultrapowers? Because you don't want to waste your days
+- reinventing the UI - just use shadcn/ui, next.js
+- reimplementing basic usage patterns like an AI chat app
+- tweaking the interface so it looks good on mobile
+- iterating over common API errors
+- refactoring a 4000-line `page.tsx` file
+- on unnecessary ceremony
 
-Ultrapowers is an opinionated fork of `obra/superpowers` that tries to be more practical and usable for product engineering. It has strong defaults to better fit practical product work and less ceremony. 
+This is a fork of `obra/superpowers` that aims to be more practical and usable for product engineering. It comes with strong defaults for shipping useful products quickly, with less ceremony and more attention to what users are actually trying to accomplish.
 
-This works best if you are solo developer who just wants to get a decent product out as quickly as possible.
+Works best if you are a solo developer who wants to get a decent product out as quickly as possible.
 
-## Core Defaults
+## What It Helps With
 
-- Work in the current repository by default.
-- YOU WILL NEVER CREATE A BRANCH unless explicitly instructed.
-- Ask the user whether we should work in worktrees as part of the planning.
-- YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
-- Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
-- Plan agentic user journey tests for important app/user stories when useful, but only run them with explicit user approval.
-- Refactor code when a file passes 1200 lines instead of continuing to grow it without structure.
-- Use user stories in specs and plans when they clarify behavior.
-- Default UI work to `shadcn/ui`.
-- Start app UI from a shadcn/ui block or pattern, no point in inventing a layout from scratch.
-- Treat desktop and mobile responsiveness as first-class from the beginning.
-- Do not default to file-based routing.
-- Prefer strong backend instrumentation and a fully instrumented control plane.
-- Prefer explicit, non-silent error handling with full error details and stack traces surfaced to the frontend.
-- Make persistence of UI settings explicit: decide per setting whether it persists, where it is stored, and how lifecycle concerns like reset and migration work.
-- Expand familiar product archetypes toward a usable v1 instead of stopping at literal requested controls.
-- Infer expected product surfaces from what users need to do, revisit, recover from, and understand.
-- Think ambitiously about the full product, then deliver it in coherent milestones without forgetting the bigger vision.
+Ultrapowers gives your coding agent a stronger product-engineering spine:
+
+- Asks the agent to think like a practical, results-oriented PM before it starts building.
+- Agentic end-to-end  user journey testing.
+- Turns rough product ideas into user stories, user journeys, and concrete implementation plans.
+- Pushes app work toward fully usable v1s.
+- Starts with practical frontend defaults: `shadcn/ui`, ShadCN Blocks, and responsive desktop/mobile design from the start.
+- Pushes for more inspectable backend work through instrumentation and explicit errors
+- Treats settings persistence, app state, loading states, recovery paths, and trust surfaces as part of the product
+- Keeps you out of merge hell
 
 ## Basic Workflow
 
-1. **brainstorming** - clarify the goal, shape the design, and write a spec.
-2. **writing-plans** - turn the approved spec into an implementation plan.
-3. **subagent-driven-development** or **executing-plans** - implement the plan.
-4. **test-driven-development** - enforce red/green development during implementation.
-5. **requesting-code-review** - review changes before calling the work done.
-6. **verification-before-completion** - verify outcomes before claiming success.
+After installing Ultrapowers, the agent will normally automatically use it next time you need to create a plan or tackle a deeper bug.
+
+The usual flow is:
+
+1. **Brainstorm** the product goal, user stories, and scope.
+2. **Write a plan** that turns the approved design into concrete implementation steps.
+3. **Implement** with the appropriate execution skill.
+4. **Verify** with tests, code review, and completion checks.
+
+For app work, Ultrapowers will also push the agent to think about PM concerns, UI completeness, persistence, instrumentation, error visibility, and whether an approval-gated agentic user journey test would be useful.
 
 ## Philosophy
 
-- **Skills first** - check for the right workflow before acting.
-- **User intent over ritual** - follow the user's instructions even when they override defaults.
-- **No surprise repo workflow** - stay in the current repository unless the user explicitly instructs otherwise.
-- **Lightweight by default** - avoid extra ceremony unless it solves a real problem.
-- **Product-minded planning** - use user stories and acceptance thinking where it helps.
-- **PM pass first** - this is not optional for app, UI, and product-surface work. Discover supporting jobs, state model, ops, observability, onboarding, trust surfaces, and north-star product direction before deciding what belongs in the milestone.
-- **Story-derived completeness** - derive missing interface behavior from user stories and journeys first, then use familiar archetypes as a sanity check.
-- **Agentic journey tests by approval** - when useful, verify user stories by giving an agent only the running app and a mission, but run that higher-cost test mode only with explicit user approval.
-- **Usable v1 completeness** - for familiar app types, include the expected baseline surfaces and states that make the product actually usable.
-- **North star, then milestone** - define the ambitious product first, then choose the current slice without erasing the rest.
-- **Frontend with opinions** - prefer `shadcn/ui`, ShadCN Blocks, and responsive layouts from the start.
-- **Explicit architecture** - do not drift into file-based routing unless the project or user specifically wants it.
-- **Instrumented by default** - capture meaningful backend events, actions, errors, and outcomes in durable logs, and expose a CLI or other scriptable control plane so workflows can be exercised and verified without the UI.
-- **No silent failures** - do not hide, overly abstract, or hand-wave errors; surface real error details and stack traces to the frontend so failures are inspectable and testable.
-- **Persistence is designed, not implied** - for each meaningful UI setting, make storage location, ownership, sync model, reset path, and migration behavior explicit.
-- **File growth is a signal** - when a file passes 1200 lines, refactor it rather than normalizing continued growth.
-- **Evidence over claims** - run the checks before saying something works.
+Ultrapowers is deliberately opinionated about product work. It tries to make coding agents slower at the moments where shallow automation causes rework: before scoping, before choosing the first UI shape, before declaring a feature done, and before trusting "no errors" as proof of user success.
+
+The big idea is simple: the agent should understand what the user is trying to do, design for the whole journey, build in coherent slices, and verify that the app is actually usable. The hard operational rules live in the skills and defaults docs; this README is the human map.
 
 ## What's Inside
 
@@ -89,7 +72,7 @@ Read [docs/ultrapowers-defaults.md](docs/ultrapowers-defaults.md) for the canoni
 
 ## Installation
 
-Ultrapowers is not currently published in the same plugin marketplaces as `obra/superpowers`. Install it directly from this GitHub repository.
+Install it directly from this repository.
 
 Repository:
 
@@ -167,8 +150,3 @@ Add Ultrapowers to the `plugin` array in your `opencode.json`:
 ```
 
 Restart OpenCode, then load a skill such as `ultrapowers/brainstorming`.
-
-### Notes
-
-- This repo includes plugin metadata for multiple harnesses, but it is not yet available through official plugin marketplaces.
-- If you want to pin a version, use a tag or commit hash in the git URL.
