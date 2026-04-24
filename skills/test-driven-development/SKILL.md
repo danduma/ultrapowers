@@ -32,6 +32,8 @@ Thinking "skip TDD just this once"? Stop. That's rationalization.
 
 When the task is UI work, choose the design system and starting block or pattern first, then write tests around the intended behavior and rendering. In Ultrapowers, that usually means `shadcn/ui` plus a ShadCN Block for app UI unless the user says otherwise.
 
+For important app workflows, also consider whether `agentic-user-journey-testing` should be proposed. Do not run that higher-cost black-box test mode without explicit user approval.
+
 ## The Iron Law
 
 ```

@@ -40,6 +40,13 @@ It is not a copy of upstream `superpowers` history. We only record the changes t
 - updated the design and planning skills so state model, persistence model, observability, control-plane behavior, and trust surfaces are expected inputs rather than optional nice-to-haves.
 - strengthened verification guidance so product-surface checks include observability, error transparency, and persistence behavior when the approved scope depends on them.
 
+### Agentic User Journey Testing
+
+- added `agentic-user-journey-testing` as a black-box verification mode for running apps.
+- defined the core standard: product-surface work is not done merely because logs are quiet; a user must be able to complete the intended job through the app.
+- made this test mode approval-gated because it can spend significant tokens and time.
+- wired candidate journey tests into brainstorming, planning, TDD, and verification while requiring explicit user approval before running them.
+
 ## Notes For Future Entries
 
 - Record only major Ultrapowers-specific changes.

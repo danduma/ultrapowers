@@ -45,6 +45,7 @@ Also verify:
 
 - the primary user stories are actually supported,
 - the primary user journey works end-to-end,
+- any approved agentic user journey tests have been run, or clearly state that they were proposed but not run because approval was not given,
 - return/revisit flows work when they are part of the product,
 - expected empty states are present,
 - expected loading, waiting, or in-progress states are visible,
@@ -68,6 +69,8 @@ When the scope includes settings or preferences, also verify:
 - refresh, restart, sign-out, reset, and migration behavior work as intended for the approved scope.
 
 Do not confuse "the requested control exists" with "the product is usable."
+
+For app, UI, and product-surface work, consider whether an agentic user journey test is the right proof. This mode is approval-gated because it can spend significant tokens: propose it when useful, but only run it if the user explicitly approves.
 
 ## Common Failures
 

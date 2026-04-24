@@ -35,6 +35,7 @@ For app, UI, and product-surface work, do not skip the PM pass. It is a required
 - error transparency expectations,
 - persistence model for settings, preferences, and user-managed state,
 - testing strategy,
+- candidate agentic user journey tests, with approval required before running them,
 - user stories when they help define behavior,
 - acceptance criteria when they clarify completion,
 - supporting jobs,
@@ -69,6 +70,7 @@ During this pass:
 - define instrumentation and observability expectations,
 - define control-plane expectations for inspection, replay, administration, and end-to-end testing,
 - define error transparency expectations so failures are not silently swallowed or abstracted away,
+- identify any high-value agentic user journey tests that should be proposed for user approval,
 - define onboarding and discoverability expectations,
 - define the main risk and trust surfaces,
 - define the north-star product,
@@ -97,6 +99,7 @@ During this pass:
 - infer the interface surfaces and system behaviors required to satisfy those stories,
 - cover expected empty, loading, running, waiting, error, completed, and recovery states,
 - cover navigation, hierarchy, and status signaling,
+- identify which primary user journeys would benefit from approval-gated black-box testing in the running app,
 - cover what settings and preferences exist, whether each one persists, and what happens across reload, sign-out, device changes, reset, and migration,
 - cover desktop and mobile behavior,
 - use the PM pass outputs as inputs,
@@ -119,6 +122,7 @@ When the work involves an app, UI, or product surface, assume these defaults unl
 - prefer strong backend instrumentation and a scriptable control plane for backend workflows,
 - prefer surfacing full error details and stack traces to the frontend instead of replacing them with vague generic failures,
 - make persistence behavior for settings explicit instead of leaving storage choices implicit,
+- propose agentic user journey tests for important user stories when useful, but do not run them without explicit user approval,
 - aim for a usable v1, not just the smallest literal UI that exposes requested controls.
 - think ambitiously about the full product, then sequence it into coherent milestones.
 

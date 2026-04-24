@@ -13,6 +13,7 @@ This file is the canonical summary of the fork's opinionated defaults.
 ## Planning
 
 - Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
+- For app, UI, and product-surface work, consider agentic user journey tests that verify a user can complete the intended job in the running app. Plan them when useful, but only run them with explicit user approval.
 - Refactor code when a file passes 1200 lines. Treat that as a sign to split responsibilities during planning or implementation.
 - Use user stories when they clarify intent, value, or acceptance criteria.
 - Prefer concrete specs and plans over vague checklists.

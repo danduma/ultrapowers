@@ -51,6 +51,7 @@ Before writing tasks, list:
 - files to create,
 - files to modify,
 - tests to update or add,
+- candidate agentic user journey tests to propose for approval,
 - the responsibility of each file.
 
 If any existing file is already near 1200 lines, or this change would push it past 1200, include refactoring or splitting work in the plan.
@@ -62,6 +63,7 @@ Each task should:
 - be small enough to execute confidently,
 - name exact file paths,
 - include concrete verification steps,
+- distinguish deterministic tests from approval-gated agentic journey tests,
 - make TDD the default flow,
 - avoid vague placeholders.
 
@@ -88,6 +90,7 @@ When relevant, make sure the plan includes treatment for:
 - instrumentation and observability requirements,
 - control-plane and scriptability requirements,
 - error transparency requirements,
+- agentic user journey test candidates, including mission, entry point, expected visible proof, and user approval gate,
 - onboarding and discoverability requirements,
 - trust and risk requirements.
 
@@ -105,6 +108,7 @@ Unless the user says otherwise, frontend plans should preserve these assumptions
 - do not default to file-based routing.
 - backend and agent workflows should usually include durable event logging plus a CLI or other scriptable control plane so tests can drive the system without the UI.
 - when there is a frontend, plans should usually preserve full backend error details and stack traces through to the frontend rather than replacing them with vague generic errors.
+- for app workflows, plans should propose black-box agentic user journey tests when useful, but state that running them requires explicit user approval.
 - plans should explicitly say for each meaningful UI setting whether it persists, where it is stored, how it is loaded and saved, and how reset, migration, and verification work.
 
 ## Self-Review

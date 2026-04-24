@@ -20,6 +20,7 @@ This works best if you are solo developer who just wants to get a decent product
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
+- Plan agentic user journey tests for important app/user stories when useful, but only run them with explicit user approval.
 - Refactor code when a file passes 1200 lines instead of continuing to grow it without structure.
 - Use user stories in specs and plans when they clarify behavior.
 - Default UI work to `shadcn/ui`.
@@ -51,6 +52,7 @@ This works best if you are solo developer who just wants to get a decent product
 - **Product-minded planning** - use user stories and acceptance thinking where it helps.
 - **PM pass first** - this is not optional for app, UI, and product-surface work. Discover supporting jobs, state model, ops, observability, onboarding, trust surfaces, and north-star product direction before deciding what belongs in the milestone.
 - **Story-derived completeness** - derive missing interface behavior from user stories and journeys first, then use familiar archetypes as a sanity check.
+- **Agentic journey tests by approval** - when useful, verify user stories by giving an agent only the running app and a mission, but run that higher-cost test mode only with explicit user approval.
 - **Usable v1 completeness** - for familiar app types, include the expected baseline surfaces and states that make the product actually usable.
 - **North star, then milestone** - define the ambitious product first, then choose the current slice without erasing the rest.
 - **Frontend with opinions** - prefer `shadcn/ui`, ShadCN Blocks, and responsive layouts from the start.
@@ -73,6 +75,7 @@ This works best if you are solo developer who just wants to get a decent product
 - **test-driven-development** - enforces red/green/refactor.
 - **systematic-debugging** - structured debugging workflow.
 - **verification-before-completion** - final proof before completion.
+- **agentic-user-journey-testing** - approval-gated black-box user journey verification for running apps.
 - **requesting-code-review** - asks for review with a bug-finding mindset.
 - **receiving-code-review** - helps evaluate and apply review feedback.
 - **dispatching-parallel-agents** - coordinates parallel independent tasks.
