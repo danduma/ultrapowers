@@ -30,6 +30,7 @@ For app, UI, and product-surface work, do not skip the PM pass. It is a required
 
 - goal and constraints,
 - architecture and boundaries,
+- file decomposition expectations for large files and growing modules,
 - data flow and error handling,
 - error transparency expectations,
 - persistence model for settings, preferences, and user-managed state,
@@ -132,6 +133,7 @@ If the current codebase already has strong conventions, preserve them unless the
 ## Design Quality
 
 - Break systems into focused units with clear responsibilities.
+- If a file is likely to pass 1200 lines, plan a refactor or split instead of letting that growth happen by default.
 - Prefer explicit interfaces over vague coupling.
 - Stay close to the current codebase patterns when working in an existing project.
 - Include only refactors that directly support the requested work.

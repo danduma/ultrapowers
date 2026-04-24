@@ -53,6 +53,8 @@ Before writing tasks, list:
 - tests to update or add,
 - the responsibility of each file.
 
+If any existing file is already near 1200 lines, or this change would push it past 1200, include refactoring or splitting work in the plan.
+
 ## Task Quality
 
 Each task should:
@@ -88,6 +90,8 @@ When relevant, make sure the plan includes treatment for:
 - error transparency requirements,
 - onboarding and discoverability requirements,
 - trust and risk requirements.
+
+Also make file growth explicit. Do not quietly allow a file to pass 1200 lines without planning a refactor or split.
 
 At the same time, do not silently hard-code debatable additions. If a proposed addition is non-obvious, materially expands scope, adds meaningful cost, or reflects a strong product opinion rather than an obvious story-derived expectation, check with the user before baking it into the plan.
 

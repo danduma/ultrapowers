@@ -30,4 +30,5 @@ Fresh subagent per task plus review between tasks keeps context clean and qualit
 
 - dispatching multiple implementers that edit the same files,
 - skipping review loops,
-- forcing extra repository isolation when the user asked to work in place.
+- forcing extra repository isolation when the user asked to work in place,
+- continuing to add code to a file after it passes 1200 lines without refactoring or splitting responsibilities.

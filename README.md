@@ -20,6 +20,7 @@ This works best if you are solo developer who just wants to get a decent product
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
+- Refactor code when a file passes 1200 lines instead of continuing to grow it without structure.
 - Use user stories in specs and plans when they clarify behavior.
 - Default UI work to `shadcn/ui`.
 - Start app UI from a shadcn/ui block or pattern, no point in inventing a layout from scratch.
@@ -57,6 +58,7 @@ This works best if you are solo developer who just wants to get a decent product
 - **Instrumented by default** - capture meaningful backend events, actions, errors, and outcomes in durable logs, and expose a CLI or other scriptable control plane so workflows can be exercised and verified without the UI.
 - **No silent failures** - do not hide, overly abstract, or hand-wave errors; surface real error details and stack traces to the frontend so failures are inspectable and testable.
 - **Persistence is designed, not implied** - for each meaningful UI setting, make storage location, ownership, sync model, reset path, and migration behavior explicit.
+- **File growth is a signal** - when a file passes 1200 lines, refactor it rather than normalizing continued growth.
 - **Evidence over claims** - run the checks before saying something works.
 
 ## What's Inside

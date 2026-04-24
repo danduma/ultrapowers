@@ -13,6 +13,7 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Prefer direct edits inside the current repository.
 - For app, UI, and product-surface work, run a PM pass during planning. Treat it as a required part of design, not an optional flourish.
+- Refactor oversized files. When a file passes 1200 lines, treat that as a prompt to split responsibilities instead of continuing to pile work into it.
 - Keep changes coherent across docs, skills, and references.
 - When changing behavior-shaping content, update the nearest supporting docs so the defaults stay discoverable.
 
@@ -22,6 +23,7 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Ask the user whether we should work in worktrees as part of the planning.
 - Use user stories in specs and plans when they help define behavior or outcomes.
 - Run a PM pass for app, UI, and product-surface work so supporting jobs, state model, operational reality, and north-star thinking become explicit early.
+- Refactor code when a file passes 1200 lines instead of treating file growth as harmless.
 - Default UI work to `shadcn/ui`.
 - Start app UIs from a ShadCN Block when possible.
 - Design for desktop and mobile from the beginning.

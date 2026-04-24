@@ -35,6 +35,7 @@ If yes, use it before continuing.
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - For app, UI, and product-surface work, run a PM pass during planning. Treat it as mandatory default behavior, not optional polish.
+- Refactor code when a file passes 1200 lines. Do not normalize oversized files as the default end state.
 - Use user stories in specs and plans when they clarify behavior or value.
 - Default UI work to `shadcn/ui` unless the user says otherwise.
 - Start app UI from a ShadCN Block before inventing a layout from scratch.
