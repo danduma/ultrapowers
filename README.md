@@ -9,6 +9,7 @@ Why should you use Ultrapowers? Because you don't want to waste your days
 - iterating over common API errors
 - refactoring a 4000-line `page.tsx` file
 - on unnecessary ceremony
+- turning a button color change into a full planning ritual
 
 This is a fork of [obra/superpowers](https://github.com/obra/superpowers) that aims to be more practical and usable for product engineering. It comes with strong defaults for shipping useful products quickly, with less ceremony and more attention to what users are actually trying to accomplish.
 
@@ -19,12 +20,13 @@ Works best if you are a solo developer who wants to get a decent product out as 
 Ultrapowers gives your coding agent a stronger product-engineering spine:
 
 - Asks the agent to think like a practical, results-oriented PM before it starts building.
-- Agentic end-to-end  user journey testing.
+- Agentic end-to-end user journey testing.
 - Turns rough product ideas into user stories, user journeys, and concrete implementation plans.
 - Pushes app work toward fully usable v1s.
 - Starts with practical frontend defaults: `shadcn/ui`, ShadCN Blocks, and responsive desktop/mobile design from the start.
 - Pushes for more inspectable backend work through instrumentation and explicit errors
 - Treats settings persistence, app state, loading states, recovery paths, and trust surfaces as part of the product
+- Keeps tiny edits tiny, so changing a color, label, typo, or prompt sentence does not become full TDD.
 - Keeps you out of merge hell
 
 ## Basic Workflow

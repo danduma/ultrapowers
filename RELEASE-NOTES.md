@@ -37,6 +37,7 @@ It is not a copy of upstream `superpowers` history. We only record the changes t
 
 ### Process And Verification
 
+- added proportional skill-use guidance so tiny mechanical edits are handled directly with targeted verification instead of triggering brainstorming, planning, or full TDD.
 - updated the design and planning skills so state model, persistence model, observability, control-plane behavior, and trust surfaces are expected inputs rather than optional nice-to-haves.
 - strengthened verification guidance so product-surface checks include observability, error transparency, and persistence behavior when the approved scope depends on them.
 

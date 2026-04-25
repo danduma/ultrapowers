@@ -15,6 +15,7 @@ Write a concrete implementation plan that another capable engineer could execute
 - Do not assume any extra repository isolation.
 - Ask the user whether we should work in worktrees before putting any extra repository isolation into the plan.
 - Keep the plan DRY, YAGNI, and test-first.
+- Do not write an implementation plan for a tiny mechanical edit with a clear target.
 
 ## Save Plans To
 
@@ -66,6 +67,8 @@ Each task should:
 - distinguish deterministic tests from approval-gated agentic journey tests,
 - make TDD the default flow,
 - avoid vague placeholders.
+
+If the whole request would be one obvious task, make the change directly instead of manufacturing a plan.
 
 ## Include User Stories When Helpful
 

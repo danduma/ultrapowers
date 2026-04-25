@@ -12,6 +12,7 @@ This file is the canonical summary of the fork's opinionated defaults.
 
 ## Planning
 
+- Keep skill use proportional. Tiny mechanical edits should be made directly with targeted verification, not expanded into brainstorming, planning, or full TDD.
 - Run a PM pass for app, UI, and product-surface work before completeness or implementation planning.
 - For app, UI, and product-surface work, consider agentic user journey tests that verify a user can complete the intended job in the running app. Plan them when useful, but only run them with explicit user approval.
 - Refactor code when a file passes 1200 lines. Treat that as a sign to split responsibilities during planning or implementation.

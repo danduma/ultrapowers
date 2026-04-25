@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Use before any creative work - creating features, building components, adding functionality, or modifying behavior
+description: Use before substantial product, UI, feature, or behavior work with ambiguity, user-journey impact, or multiple plausible approaches
 ---
 
 # Brainstorming Ideas Into Designs
@@ -12,6 +12,8 @@ Turn rough ideas into an approved design before implementation begins.
 Do not implement, scaffold, or change behavior until the design has been presented and approved.
 
 For app, UI, and product-surface work, do not skip the PM pass. It is a required part of brainstorming in Ultrapowers.
+
+Do not use brainstorming for tiny mechanical edits with a clear target. A color tweak, typo fix, prompt wording change, label rename, or obvious formatting adjustment should be done directly with targeted verification.
 
 ## Checklist
 
@@ -133,6 +135,7 @@ If the current codebase already has strong conventions, preserve them unless the
 - Ask one question at a time.
 - Prefer multiple-choice framing when possible.
 - Do not invent extra process when the user has already answered the important decisions.
+- If the request is tiny and unambiguous, do the change instead of turning it into a design conversation.
 
 ## Design Quality
 

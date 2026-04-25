@@ -26,6 +26,14 @@ Write the test first. Watch it fail. Write minimal code to pass.
 - Generated code
 - Configuration files
 
+**Do directly with targeted verification:**
+- tiny color, spacing, copy, or label changes,
+- one-line prompt wording changes,
+- docs-only wording changes,
+- mechanical edits where the expected result is obvious from the diff.
+
+Do not perform a full red-green cycle for a tiny mechanical edit unless it changes behavior or there is a real regression risk. For example, changing a button from gray to blue usually needs the edit plus a targeted visual or code check, not a new failing test.
+
 Thinking "skip TDD just this once"? Stop. That's rationalization.
 
 ## UI-Specific Note

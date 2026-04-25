@@ -41,6 +41,8 @@ Skip any step = lying, not verifying
 
 When the work involves an app, UI, or product surface, verification must cover more than whether a single requested feature works.
 
+Keep verification proportional. For tiny mechanical edits, targeted verification is enough: inspect the diff, confirm the changed value/text, and run only the smallest relevant check. Do not escalate to full product-surface verification unless the change can affect behavior, state, navigation, persistence, or the user journey.
+
 Also verify:
 
 - the primary user stories are actually supported,
