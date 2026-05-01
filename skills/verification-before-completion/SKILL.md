@@ -45,6 +45,7 @@ Keep verification proportional. For tiny mechanical edits, targeted verification
 
 Also verify:
 
+- required functionality is real end-to-end, not a fake component, mock, placeholder, canned response, or fallback path,
 - the primary user stories are actually supported,
 - the primary user journey works end-to-end,
 - any approved agentic user journey tests have been run, or clearly state that they were proposed but not run because approval was not given,
@@ -85,6 +86,7 @@ For app, UI, and product-surface work, consider whether an agentic user journey 
 | Regression test works | Red-green cycle verified | Test passes once |
 | Agent completed | VCS diff shows changes | Agent reports "success" |
 | Requirements met | Line-by-line checklist | Tests passing |
+| Feature complete | Real end-to-end behavior in the product | Mocked component, canned data, placeholder UI, fallback path |
 
 ## Red Flags - STOP
 
@@ -92,6 +94,7 @@ For app, UI, and product-surface work, consider whether an agentic user journey 
 - Expressing satisfaction before verification ("Great!", "Perfect!", "Done!", etc.)
 - About to commit/push/PR without verification
 - Trusting agent success reports
+- Accepting "validated with mocks" or "placeholder works" as completion
 - Relying on partial verification
 - Thinking "just this once"
 - Tired and wanting work over

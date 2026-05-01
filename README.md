@@ -7,6 +7,7 @@ Why should you use Ultrapowers? Because you don't want to waste your days
 - reimplementing basic usage patterns like an AI chat app
 - tweaking the interface so it looks good on mobile
 - iterating over common API errors
+- being told a mocked workflow proves the product works
 - refactoring a 4000-line `page.tsx` file
 - on unnecessary ceremony
 - turning a button color change into a full planning ritual
@@ -23,6 +24,7 @@ Ultrapowers gives your coding agent a stronger product-engineering spine:
 - Agentic end-to-end user journey testing.
 - Turns rough product ideas into user stories, user journeys, and concrete implementation plans.
 - Pushes app work toward fully usable v1s.
+- Rejects fake components, mocks, placeholders, and fallback-only paths as final deliverables unless you explicitly asked for a prototype.
 - Starts with practical frontend defaults: `shadcn/ui`, ShadCN Blocks, and responsive desktop/mobile design from the start.
 - Pushes for more inspectable backend work through instrumentation and explicit errors
 - Treats settings persistence, app state, loading states, recovery paths, and trust surfaces as part of the product

@@ -123,6 +123,7 @@ Vague name, tests mock not code
 - One behavior
 - Clear name
 - Real code (no mocks unless unavoidable)
+- Real product behavior is the target. Mocked behavior can never be the final deliverable or proof that the feature works.
 
 ### Verify RED - Watch It Fail
 
@@ -349,6 +350,7 @@ Before marking work complete:
 - [ ] All tests pass
 - [ ] Output pristine (no errors, warnings)
 - [ ] Tests use real code (mocks only if unavoidable)
+- [ ] The delivered functionality is real, not a fake component, placeholder, canned response, or fallback pretending to work
 - [ ] Edge cases and errors covered
 
 Can't check all boxes? You skipped TDD. Start over.

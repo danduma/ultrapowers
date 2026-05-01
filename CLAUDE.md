@@ -13,6 +13,7 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Prefer direct edits inside the current repository.
 - Keep process proportional. Tiny mechanical edits such as color tweaks, typos, label changes, and prompt wording changes should be made directly with targeted verification.
+- Deliver real final functionality by default. NO FAKE COMPONENTS, NO MOCKS, NO PLACEHOLDERS, NO FALLBACKS as substitutes for requested behavior unless the human explicitly asks for a prototype or scaffold.
 - For app, UI, and product-surface work, run a PM pass during planning. Treat it as a required part of design, not an optional flourish.
 - For app, UI, and product-surface work, consider agentic user journey tests during planning, but do not run them without explicit user approval because they can be token-expensive.
 - Refactor oversized files. When a file passes 1200 lines, treat that as a prompt to split responsibilities instead of continuing to pile work into it.
@@ -24,6 +25,7 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Work in the current repository by default.
 - Ask the user whether we should work in worktrees as part of the planning.
 - Keep tiny mechanical edits tiny; do not expand them into brainstorming, planning, or full TDD.
+- Treat plans as commitments to full, complete, final product functionality for the approved milestone, not mock-driven demos.
 - Use user stories in specs and plans when they help define behavior or outcomes.
 - Run a PM pass for app, UI, and product-surface work so supporting jobs, state model, operational reality, and north-star thinking become explicit early.
 - Plan agentic user journey tests for important user stories when useful, but gate execution on explicit user approval.

@@ -54,6 +54,7 @@ Use the heavier process when the request is ambiguous, user-facing behavior chan
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Keep skill use proportional. Tiny mechanical edits should stay tiny.
+- Deliver full product functionality by default. NO FAKE COMPONENTS, NO MOCKS, NO PLACEHOLDERS, NO FALLBACKS as substitutes for the requested functionality unless the human explicitly asks for a prototype or scaffold.
 - For app, UI, and product-surface work, run a PM pass during planning. Treat it as mandatory default behavior, not optional polish.
 - For app, UI, and product-surface work, consider `agentic-user-journey-testing` for important user stories, but do not run it without explicit user approval.
 - Refactor code when a file passes 1200 lines. Do not normalize oversized files as the default end state.

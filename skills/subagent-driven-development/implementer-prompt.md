@@ -38,6 +38,14 @@ Task tool (general-purpose):
 
     Work from: [directory]
 
+    ## Full Functionality Standard
+
+    Deliver the real task functionality, not a demo-shaped substitute. NO FAKE
+    COMPONENTS, NO MOCKS, NO PLACEHOLDERS, NO FALLBACKS as completion substitutes
+    unless the human explicitly approved prototype/scaffold work. Tests may use
+    test doubles only when truly unavoidable, but mocked behavior is never proof
+    that the product functionality works.
+
     **While you work:** If you encounter something unexpected or unclear, **ask questions**.
     It's always OK to pause and clarify. Don't guess or make assumptions.
 
@@ -79,6 +87,7 @@ Task tool (general-purpose):
     - Did I fully implement everything in the spec?
     - Did I miss any requirements?
     - Are there edge cases I didn't handle?
+    - Did I avoid fake components, mocks, placeholders, canned data, or fallback paths as substitutes for real functionality?
 
     **Quality:**
     - Is this my best work?

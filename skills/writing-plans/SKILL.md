@@ -16,6 +16,7 @@ Write a concrete implementation plan that another capable engineer could execute
 - Ask the user whether we should work in worktrees before putting any extra repository isolation into the plan.
 - Keep the plan DRY, YAGNI, and test-first.
 - Do not write an implementation plan for a tiny mechanical edit with a clear target.
+- Plan for full, complete, final product functionality. NO FAKE COMPONENTS, NO MOCKS, NO PLACEHOLDERS, NO FALLBACKS as substitutes for requested behavior unless the human explicitly asks for a prototype or scaffold.
 
 ## Save Plans To
 
@@ -42,6 +43,8 @@ Every plan should begin with:
 
 **Later Milestones / Deferred But Intentional:** [what remains part of the product vision]
 
+**Final Functionality Standard:** [state how this milestone delivers real functionality end-to-end, and explicitly call out any intentional deferrals approved by the human]
+
 ---
 ```
 
@@ -53,6 +56,7 @@ Before writing tasks, list:
 - files to modify,
 - tests to update or add,
 - candidate agentic user journey tests to propose for approval,
+- real integrations, data paths, and product surfaces required for final functionality,
 - the responsibility of each file.
 
 If any existing file is already near 1200 lines, or this change would push it past 1200, include refactoring or splitting work in the plan.
@@ -66,6 +70,7 @@ Each task should:
 - include concrete verification steps,
 - distinguish deterministic tests from approval-gated agentic journey tests,
 - make TDD the default flow,
+- implement real functionality instead of fake components, mocks, placeholders, or fallback paths that pretend the feature works,
 - avoid vague placeholders.
 
 If the whole request would be one obvious task, make the change directly instead of manufacturing a plan.
@@ -99,6 +104,8 @@ When relevant, make sure the plan includes treatment for:
 
 Also make file growth explicit. Do not quietly allow a file to pass 1200 lines without planning a refactor or split.
 
+Do not use mocks, fake components, placeholder screens, canned responses, or fallback behavior as acceptance criteria or completion proof. They are only acceptable when the human explicitly asks for a prototype, scaffold, temporary shim, or isolated test double. If anything is intentionally deferred, label it as deferred and do not present it as delivered.
+
 At the same time, do not silently hard-code debatable additions. If a proposed addition is non-obvious, materially expands scope, adds meaningful cost, or reflects a strong product opinion rather than an obvious story-derived expectation, check with the user before baking it into the plan.
 
 ## Frontend Defaults In Plans
@@ -125,7 +132,9 @@ Before execution, check:
 5. the plan includes obvious baseline expected v1 surfaces and states,
 6. the plan does not lock in non-obvious additions without user confirmation,
 7. the current milestone is clearly separated from the north-star product,
-8. deferred-but-intentional work has not been silently forgotten.
+8. deferred-but-intentional work has not been silently forgotten,
+9. the plan's final deliverable is full, complete, final product functionality for the approved milestone,
+10. no task accepts fake components, mocks, placeholders, canned data, or fallback paths as the final deliverable.
 
 ## Execution Handoff
 

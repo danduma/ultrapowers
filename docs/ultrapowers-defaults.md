@@ -19,6 +19,7 @@ This file is the canonical summary of the fork's opinionated defaults.
 - Use user stories when they clarify intent, value, or acceptance criteria.
 - Prefer concrete specs and plans over vague checklists.
 - Keep workflow discipline, but do not invent process overhead the user did not ask for.
+- Plan and deliver full product functionality by default. NO FAKE COMPONENTS, NO MOCKS, NO PLACEHOLDERS, NO FALLBACKS as substitutes for requested behavior unless the human explicitly asks for a prototype or scaffold.
 - Run a PM-style pass before completeness work for app and product surfaces.
 - Derive usable-v1 completeness primarily from user stories and journeys.
 - Use familiar product archetypes as a secondary backstop, not the primary source of truth.
