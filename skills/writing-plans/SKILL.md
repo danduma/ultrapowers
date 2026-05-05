@@ -57,6 +57,7 @@ Before writing tasks, list:
 - tests to update or add,
 - candidate agentic user journey tests to propose for approval,
 - real integrations, data paths, and product surfaces required for final functionality,
+- `.gitignore` coverage for secrets, local environment files, dependencies, caches, build outputs, logs, temporary files, and intermediate/generated artifacts,
 - the responsibility of each file.
 
 If any existing file is already near 1200 lines, or this change would push it past 1200, include refactoring or splitting work in the plan.
@@ -115,6 +116,7 @@ Unless the user says otherwise, frontend plans should preserve these assumptions
 - `shadcn/ui` is the default design system,
 - app UI starts by selecting a ShadCN Block or starting pattern,
 - desktop and mobile responsiveness are part of the first implementation pass,
+- React app plans should invoke `building-react-apps` and identify the Manager classes that own shared state and data structures,
 - do not default to file-based routing.
 - backend and agent workflows should usually include durable event logging plus a CLI or other scriptable control plane so tests can drive the system without the UI.
 - when there is a frontend, plans should usually preserve full backend error details and stack traces through to the frontend rather than replacing them with vague generic errors.

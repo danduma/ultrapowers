@@ -19,6 +19,8 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Refactor oversized files. When a file passes 1200 lines, treat that as a prompt to split responsibilities instead of continuing to pile work into it.
 - Keep changes coherent across docs, skills, and references.
 - When changing behavior-shaping content, update the nearest supporting docs so the defaults stay discoverable.
+- Every project should have a `.gitignore`.
+- Never commit or push secrets, credentials, local environment files, `node_modules`, dependency caches, build outputs, coverage output, logs, temporary files, or intermediate/generated artifacts unless the human explicitly asks to version a specific generated artifact.
 
 ## Ultrapowers Defaults
 
@@ -33,6 +35,7 @@ This repository is a local fork of `obra/superpowers` that we are reshaping into
 - Default UI work to `shadcn/ui`.
 - Start app UIs from a ShadCN Block when possible.
 - Design for desktop and mobile from the beginning.
+- For React apps, use the `building-react-apps` skill, centralize shared state in global single-source-of-truth Manager classes, and default to `pnpm` instead of `npm`.
 - Avoid file-based routing by default.
 - Prefer strong backend instrumentation by default.
 - Prefer a fully instrumented control plane for backend and product work: persist meaningful events, actions, errors, and state transitions, and expose them through a CLI or other scriptable interface so the system can be tested end-to-end without relying on the UI.

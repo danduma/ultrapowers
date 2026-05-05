@@ -9,6 +9,8 @@ This file is the canonical summary of the fork's opinionated defaults.
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Keep ceremony proportional to the task.
+- Every project should have a `.gitignore`.
+- Never commit or push secrets, credentials, local environment files, `node_modules`, dependency caches, build outputs, coverage output, logs, temporary files, or intermediate/generated artifacts unless the human explicitly asks to version a specific generated artifact.
 
 ## Planning
 
@@ -34,6 +36,7 @@ This file is the canonical summary of the fork's opinionated defaults.
 - Start app UI by choosing a ShadCN Block before inventing a layout from scratch.
 - Treat desktop and mobile as first-class targets from the beginning.
 - Build responsiveness into the first implementation pass.
+- For React apps, use `building-react-apps`: centralize state in Manager classes, keep data transitions explicit, avoid file-based routing by default, default to `pnpm` instead of `npm`, use `import`, and keep frontend strings/settings out of `.env`.
 
 ## Architecture
 

@@ -60,9 +60,12 @@ The important behavioral defaults come from `using-ultrapowers`, plus the rewrit
 - ask the user whether we should work in worktrees as part of the planning,
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - user stories when they clarify plans,
+- every project should have a `.gitignore`,
+- never commit or push secrets, local environment files, dependencies, caches, build outputs, logs, or intermediate/generated artifacts,
 - `shadcn/ui` for UI work,
 - ShadCN Blocks as the first stop for app UI,
 - desktop and mobile responsiveness from the start,
+- React apps use `building-react-apps` for Manager-owned state, explicit transitions, imports, refs, routing, `pnpm`, and frontend settings,
 - no file-based routing by default,
 - strong backend instrumentation with a scriptable control plane when the project has backend workflows,
 - no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists,

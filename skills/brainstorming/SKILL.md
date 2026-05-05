@@ -120,6 +120,7 @@ When the work involves an app, UI, or product surface, assume these defaults unl
 - choose a ShadCN Block first for app UI,
 - design for desktop and mobile from the beginning,
 - make responsiveness part of the initial design,
+- for React apps, use `building-react-apps` and identify the global Manager-owned state model early,
 - avoid file-based routing by default,
 - prefer strong backend instrumentation and a scriptable control plane for backend workflows,
 - prefer surfacing full error details and stack traces to the frontend instead of replacing them with vague generic failures,

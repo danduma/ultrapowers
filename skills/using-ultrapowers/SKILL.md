@@ -54,6 +54,8 @@ Use the heavier process when the request is ambiguous, user-facing behavior chan
 - Ask the user whether we should work in worktrees as part of the planning.
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - Keep skill use proportional. Tiny mechanical edits should stay tiny.
+- Every project should have a `.gitignore`.
+- Never commit or push secrets, credentials, local environment files, `node_modules`, dependency caches, build outputs, coverage output, logs, temporary files, or intermediate/generated artifacts unless the human explicitly asks to version a specific generated artifact.
 - Deliver full product functionality by default. NO FAKE COMPONENTS, NO MOCKS, NO PLACEHOLDERS, NO FALLBACKS as substitutes for the requested functionality unless the human explicitly asks for a prototype or scaffold.
 - For app, UI, and product-surface work, run a PM pass during planning. Treat it as mandatory default behavior, not optional polish.
 - For app, UI, and product-surface work, consider `agentic-user-journey-testing` for important user stories, but do not run it without explicit user approval.
@@ -63,6 +65,7 @@ Use the heavier process when the request is ambiguous, user-facing behavior chan
 - Start app UI from a ShadCN Block before inventing a layout from scratch.
 - Treat desktop and mobile responsiveness as first-class from the beginning.
 - Do not default to file-based routing.
+- For React apps, use `building-react-apps` for state managers, explicit transitions, routing, refs, imports, package-manager defaults, and frontend configuration defaults.
 - Prefer strong instrumentation and auditability for backend behavior.
 - When a project has backend or agent workflows, prefer a fully instrumented control plane: persist meaningful events, tool calls, actions, results, errors, and state transitions, and expose them through a CLI or other scriptable interface so the full system can be inspected and tested without the UI.
 - Do not default to silent, masked, or over-abstracted errors.

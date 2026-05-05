@@ -35,9 +35,12 @@ use skill tool to load ultrapowers/brainstorming
 - ask the user whether we should work in worktrees as part of the planning,
 - YOU WILL ONLY CREATE A WORKTREE if explicitly instructed.
 - user stories when they help define behavior,
+- every project should have a `.gitignore`,
+- never commit or push secrets, local environment files, dependencies, caches, build outputs, logs, or intermediate/generated artifacts,
 - `shadcn/ui` as the default UI system,
 - start app UI from a ShadCN Block,
 - responsive desktop and mobile design from the start,
+- React apps use `building-react-apps` for Manager-owned state, explicit transitions, imports, refs, routing, `pnpm`, and frontend settings,
 - avoid file-based routing by default,
 - strong backend instrumentation with a scriptable control plane when the project has backend workflows,
 - no silent or heavily abstracted errors by default, with full error details and stack traces surfaced to the frontend when a frontend exists,

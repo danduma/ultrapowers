@@ -25,10 +25,11 @@ Ultrapowers gives your coding agent a stronger product-engineering spine:
 - Turns rough product ideas into user stories, user journeys, and concrete implementation plans.
 - Pushes app work toward fully usable v1s.
 - Rejects fake components, mocks, placeholders, and fallback-only paths as final deliverables unless you explicitly asked for a prototype.
-- Starts with practical frontend defaults: `shadcn/ui`, ShadCN Blocks, and responsive desktop/mobile design from the start.
+- Starts with practical frontend defaults: `shadcn/ui`, ShadCN Blocks, responsive desktop/mobile design, and explicit React state managers when building React apps.
 - Pushes for more inspectable backend work through instrumentation and explicit errors
 - Treats settings persistence, app state, loading states, recovery paths, and trust surfaces as part of the product
 - Keeps tiny edits tiny, so changing a color, label, typo, or prompt sentence does not become full TDD.
+- Expects every project to have a `.gitignore` and keeps secrets, dependencies, caches, build outputs, logs, and intermediate artifacts out of git.
 - Keeps you out of merge hell
 
 ## Basic Workflow
@@ -56,6 +57,7 @@ The big idea is simple: the agent should understand what the user is trying to d
 
 - **using-ultrapowers** - establishes skill discipline and instruction priority.
 - **brainstorming** - turns ideas into an approved design and spec.
+- **building-react-apps** - sets React defaults for Manager-owned state, explicit transitions, routing, refs, imports, `pnpm`, and frontend configuration.
 - **writing-plans** - turns a spec into a concrete implementation plan.
 - **executing-plans** - executes a written plan inline.
 - **subagent-driven-development** - executes a written plan with subagents when available.

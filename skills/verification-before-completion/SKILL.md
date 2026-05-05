@@ -161,8 +161,11 @@ From 24 failure memories:
 - ANY expression of satisfaction
 - ANY positive statement about work state
 - Committing, PR creation, task completion
+- Staging, committing, pushing, or opening a PR when the work could include secrets, local environment files, dependencies, caches, build outputs, logs, temporary files, or generated/intermediate artifacts
 - Moving to next task
 - Delegating to agents
+
+Before any git publish step, verify `.gitignore` exists for the project and that `git status` does not include secrets, credentials, local environment files, `node_modules`, dependency caches, build outputs, coverage output, logs, temporary files, or intermediate/generated artifacts unless the human explicitly asked to version a specific generated artifact.
 
 **Rule applies to:**
 - Exact phrases
